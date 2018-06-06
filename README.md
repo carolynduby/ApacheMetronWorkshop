@@ -13,4 +13,4 @@ After this workshop you will be able to:
 
 # Version
 
-The labs are designed to work with Apache Metron 0.4.2 as packaged in Hortonworks Cyber Security Platform.  For more information consult the [HCP Release Notes](https://docs.hortonworks.com/HDPDocuments/HCP1/HCP-1.4.2/bk_release-notes/content/ch01.html%29)
+The labs are designed to work with Apache Metron 0.4.2 as packaged in Hortonworks Cyber Security Platform.  For more information consult the [HCP Release Notes](https://docs.hortonworks.com/HDPDocuments/HCP1/HCP-1.4.2/bk_release-notes/content/ch01.html)
