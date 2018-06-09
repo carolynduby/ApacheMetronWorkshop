@@ -41,7 +41,9 @@ Now we will build a mysquid sensor from scratch using a grok parser.
 	Parser Type: Grok
 4. Click to expand the Grok Statement.   Copy and paste the grok expression below to the right of the MYSQUID grok expression name:
 
+```
 %{NUMBER:timestamp}[^0-9]*%{INT:elapsed} %{IP:ip_src_addr} %{WORD:action}/%{NUMBER:code} %{NUMBER:bytes} %{WORD:method} %{NOTSPACE:url}[^0-9]*(%{IP:ip_dst_addr})?
+```
 
 5. Paste the sample squid raw log entry into the sample and click Test.  The Preview section will update with the fields parsed from the raw log.
 
@@ -55,12 +57,13 @@ http://***metron_host_name***:5000
 3. If the Welcome window appears, click the Get to work button.
 4. Paste the following command into the left side of Dev Tools window:
 
-    PUT _template/mysquid 
+```
+PUT _template/mysquid 
 {
-"template": "mysquid_index*",
+    "template": "mysquid_index*",
     "settings": {},
     "mappings": {
-      "squid_doc": {
+      "mysquid_doc": {
         "dynamic_templates": [
           {
             "geo_location_point": {
@@ -220,7 +223,8 @@ http://***metron_host_name***:5000
         }
       }
     }
-}
+  }
+```
 
 5. Press the green play button.   The result on the right hand side of the screen will show "acknowledged" : true
 ## Starting the mysquid sensor
