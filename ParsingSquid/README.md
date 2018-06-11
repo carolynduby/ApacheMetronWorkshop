@@ -19,9 +19,14 @@ On Windows, follow the manual instructions on [this page](http://www.dummies.com
 2. In the browser configured with the Metron squid proxy, open a web site that generates web requests such as google.com or a news website.  
 
 To generate data using curl, open a command line tool and enter:
+```
 curl -l --proxy *metron_host_name*:3128 *web_url*
+```
  
-For example to access google using a proxy, curl -I --proxy ec2-35-157-246-126.eu-central-1.compute.amazonaws.com:3128 http://google.com
+For example to access google using a proxy, 
+```
+curl -I --proxy ec2-35-157-246-126.eu-central-1.compute.amazonaws.com:3128 http://google.com
+```
 
 4. Open the Metron alerts ui by entering http://***metron_host_name***:4201 in the browser. 
 
@@ -39,13 +44,20 @@ Now we will build a mysquid sensor from scratch using a grok parser.
 	Name: mysquid
 	Kafka Topic: mysquid
 	Parser Type: Grok
+
+![Create My Squid Sensor](create_mysquid_sensor.png)
+
 4. Click to expand the Grok Statement.   Copy and paste the grok expression below to the right of the MYSQUID grok expression name:
 
 ```
 %{NUMBER:timestamp}[^0-9]*%{INT:elapsed} %{IP:ip_src_addr} %{WORD:action}/%{NUMBER:code} %{NUMBER:bytes} %{WORD:method} %{NOTSPACE:url}[^0-9]*(%{IP:ip_dst_addr})?
 ```
+![My Squid Sensor](mysquid_grok.png)
+
 
 5. Paste the sample squid raw log entry into the sample and click Test.  The Preview section will update with the fields parsed from the raw log.
+
+![My Squid With Sample](mysquid_grok_sample.png)
 
 6. Click Save.
 7. Click Save on the mysquid sensor.
@@ -53,8 +65,8 @@ Now we will build a mysquid sensor from scratch using a grok parser.
 After events are enriched and triaged, metron stores the events in an index.  The index template specifies how to interpret the metron events and how to index strings using either a keyword or full text search.
 1. Enter the Kibana url in the browser:
 http://***metron_host_name***:5000
-2. Select Dev Tools from the left hand side of the kibana page.  The Dev Tools console is an easy way to interact with the index REST api. 
-3. If the Welcome window appears, click the Get to work button.
+2. Select Dev Tools from the left hand side of the kibana page.  The Dev Tools console is an easy way to interact with the index REST api.  If the Welcome window appears, click the Get to work button.
+![Kibana Dev Tools](kibana_create_es_template.png)
 4. Paste the following command into the left side of Dev Tools window:
 
 ```
@@ -234,19 +246,28 @@ PUT _template/mysquid
 1. Enter the Nifi URL in your browser:
  http://***metron_host_name***:9090/nifi/
  10. The Nifi flow on the canvas tails the squid access.log and sends the lines to the PublishKafka.  PublishKafka breaks the log sample into individual lines and writes each line as a Kafka message to the squid topic.
+![Original Nifi Flow](nifi_01.png)
  11. Right click on the PublishSquidToMetron processor and select Copy.
  12. Right click on an empty area of the canvas and select Paste.  
+![Pasted Nifi PublishSquidToMetron](nifi_02.png)
  13. Right click on the copy of PublishSquidToMetron and select Configure.
  14. Click on the Settings tab and change the name to PublishMySquidToMetron.
+![Change Processor Name](nifi_04.png)
  15. Click the Properties tab and change Topic Name to mysquid.
+![Change Topic Name](nifi_03.png)
  16. Click Apply to save the changes.
  17. Hover the cursor over the Read Squid Log processor until the connect icon appears.   Click and drag the flow to the middle of the PublishMySquidToMetron.  Drop the cursor and the Create Connection dialog appears.
+![Create Connection](nifi_05.png)
  18. Click Add.
  19. The flow should look as below:
+![Flow with Mysquid](nifi_06.png)
 
 2.  The flow can now write squid data to both topics or either topic.  It will be easier to see what is happening if we stop writing to the squid topic.   
 3. Right click on PublishSquidToMetron and select Stop.
 4. Right click on PublishMySquidToMetron and select Start.
+![Mysquid complete flow](nifi_complete_mysquid_started.png)
+
 5. Squid events should now be flowing to the mysquid sensor.
 6. Set the browser to use the Metron proxy to try out the mysquid parser.
 7. Open Metron Alerts UI.  The Metron Alerts UI will now show mysquid events.
+![Alerts UI with mysquid events](alerts_ui_mysquid.png)
