@@ -73,8 +73,7 @@ Now we will build a mysquid sensor from scratch using a grok parser.
 10.  In the enter field point, enter timestampField.
 11. In enter value, enter timestamp.
 
-![Setting the timestamp field](images/timestamp_parser_config.png)
-
+<img src="images/timestamp_parser_config.png" width="60%" height="60%" title="Setting the timestamp field">
 12. Click the + button. 
 13. Click the Save button.
 ## Installing the mysquid index template
@@ -83,7 +82,7 @@ After events are enriched and triaged, metron stores the events in an index.  Th
 http://***metron_host_name***:5000
 2. Select Dev Tools from the left hand side of the kibana page.  The Dev Tools console is an easy way to interact with the index REST api.  If the Welcome window appears, click the Get to work button.
 
-![Kibana Get to Work](images/kibana_get_working.png)
+<img src="images/kibana_get_working.png" width="60%" height="60%" title="Kibana Get to Work">
 
 3. Paste the following command into the left side of Dev Tools window:
 ![Kibana Dev Tools](images/kibana_create_es_template.png)
