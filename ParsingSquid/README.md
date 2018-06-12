@@ -285,6 +285,8 @@ PUT _template/mysquid
 
 18.  Congratulations!  You are now ingesting squid logs.  The next step is to add enrichments.
 
-References
+## References
+
 [Metron Run Book](https://docs.hortonworks.com/HDPDocuments/HCP1/HCP-1.5.0/bk_runbook/bk_runbook.pdf)
+
 [Metron Source Code](https://github.com/apache/metron)
