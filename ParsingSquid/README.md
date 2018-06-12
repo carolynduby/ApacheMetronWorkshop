@@ -41,11 +41,12 @@ Now we will build a mysquid sensor from scratch using a grok parser.
 1. Open the Metron Management UI.
 2. Click on the + button on the lower right corner to add a new sensor.
 3. Enter the following:
+```
 	Name: mysquid
 	Kafka Topic: mysquid
 	Parser Type: Grok
-
-![Create My Squid Sensor](mysquid_create_sensor.png)
+```
+![Create My Squid Sensor](mysquid_create_sensor.png){:height="50%" width="50%"}
 
 4. Click to expand the Grok Statement.   Copy and paste the grok expression below to the right of the MYSQUID grok expression name:
 
