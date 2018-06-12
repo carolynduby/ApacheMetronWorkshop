@@ -249,15 +249,22 @@ PUT _template/mysquid
  http://***metron_host_name***:9090/nifi/
 2. The Nifi flow on the canvas tails the squid access.log and sends the lines to the PublishKafka.  PublishKafka breaks the log sample into individual lines and writes each line as a Kafka message to the squid topic.
 <img src="nifi_01.png" width="50%" height="50%" title="Original Nifi Flow">
+
 3. Right click on the PublishSquidToMetron processor and select Copy.
+
 4. Right click on an empty area of the canvas and select Paste.  
 ![Pasted Nifi PublishSquidToMetron](nifi_02.png)
+
 5. Right click on the copy of PublishSquidToMetron and select Configure.
+
 6. Click on the Settings tab and change the name to PublishMySquidToMetron.
 <img src="nifi_04.png" width="60%" height="60%" title="Change Processor Name">
+
 7. Click the Properties tab and change Topic Name to mysquid.
 <img src="nifi_03.png" width="60%" height="60%" title="Change Topic Name">
+
 8. Click Apply to save the changes.
+
 9. Hover the cursor over the Read Squid Log processor until the connect icon appears.   Click and drag the flow to the middle of the PublishMySquidToMetron.  Drop the cursor and the Create Connection dialog appears.
 <img src="nifi_05.png" width="50%" height="50%" title="Create Connection">
 
