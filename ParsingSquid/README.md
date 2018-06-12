@@ -82,6 +82,7 @@ After events are enriched and triaged, metron stores the events in an index.  Th
 1. Enter the Kibana url in the browser:
 http://***metron_host_name***:5000
 2. Select Dev Tools from the left hand side of the kibana page.  The Dev Tools console is an easy way to interact with the index REST api.  If the Welcome window appears, click the Get to work button.
+
 ![Kibana Get to Work](images/kibana_get_working.png)
 
 3. Paste the following command into the left side of Dev Tools window:
