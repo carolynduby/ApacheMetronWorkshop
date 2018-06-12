@@ -73,7 +73,7 @@ Now we will build a mysquid sensor from scratch using a grok parser.
 10.  In the enter field point, enter timestampField.
 11. In enter value, enter timestamp.
 
-<img src="images/timestamp_parser_config.png" width="60%" height="60%" title="Setting the timestamp field">
+<img src="images/timestamp_parser_config.png" width="30%" height="30%" title="Setting the timestamp field">
 12. Click the + button. 
 13. Click the Save button.
 ## Installing the mysquid index template
