@@ -57,7 +57,11 @@ Now we will build a mysquid sensor from scratch using a grok parser.
 ![My Squid Sensor](images/mysquid_grok.png)
 
 
-5. Paste the sample squid raw log entry into the sample and click Test.  The Preview section will update with the fields parsed from the raw log.
+5. Paste the sample squid raw log entry below into the Sample field and click Test.  The Preview section will update with the fields parsed from the raw log.
+
+```
+1528766038.123  70328 75.133.181.135 TCP_TUNNEL/200 420 CONNECT data.cnn.com:443 - HIER_DIRECT/2.20.22.7 -
+```
 
 ![My Squid With Sample](images/mysquid_grok_sample.png)
 
