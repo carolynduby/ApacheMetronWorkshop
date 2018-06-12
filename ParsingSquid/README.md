@@ -283,3 +283,8 @@ PUT _template/mysquid
 17. Open Metron Alerts UI.  The Metron Alerts UI will now show mysquid events.
 <img src="alerts_ui_mysquid.png" width="75%" height="75%" title="Alerts UI with mysquid events">
 
+18.  Congratulations!  You are now ingesting squid logs.  The next step is to add enrichments.
+
+References
+[Metron Run Book](https://docs.hortonworks.com/HDPDocuments/HCP1/HCP-1.5.0/bk_runbook/bk_runbook.pdf)
+[Metron Source Code](https://github.com/apache/metron)
