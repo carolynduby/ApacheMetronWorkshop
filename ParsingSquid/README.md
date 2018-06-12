@@ -31,10 +31,10 @@ curl -I --proxy ec2-35-157-246-126.eu-central-1.compute.amazonaws.com:3128 http:
 3. Open the Metron alerts ui by entering http://***metron_host_name***:4201 in the browser. 
 
 By default you will see the most recent events at the top of the UI.  At this point you should see some squid events with recent timestamps in the alerts ui.
-![Metron Alerts Squid](metron_alerts_squid.png)
+![Metron Alerts Squid](images/metron_alerts_squid.png)
 
 If you click in the space between the columns, the full details of the event will open on the right side of the browser.
-![Metron Alerts Details](metron_alerts_details.png)
+![Metron Alerts Details](images/metron_alerts_details.png)
 
 ## Adding the  mysquid sensor
 Now we will build a mysquid sensor from scratch using a grok parser. 
@@ -47,19 +47,19 @@ Now we will build a mysquid sensor from scratch using a grok parser.
 	Parser Type: Grok
 ```
 
-<img src="mysquid_create_sensor.png" width="35%" height="35%" title="Create My Squid Sensor">
+<img src="images/mysquid_create_sensor.png" width="35%" height="35%" title="Create My Squid Sensor">
 
 4. Click to expand the Grok Statement.   Copy and paste the grok expression below to the right of the MYSQUID grok expression name:
 
 ```
 %{NUMBER:timestamp}[^0-9]*%{INT:elapsed} %{IP:ip_src_addr} %{WORD:action}/%{NUMBER:code} %{NUMBER:bytes} %{WORD:method} %{NOTSPACE:url}[^0-9]*(%{IP:ip_dst_addr})?
 ```
-![My Squid Sensor](mysquid_grok.png)
+![My Squid Sensor](images/mysquid_grok.png)
 
 
 5. Paste the sample squid raw log entry into the sample and click Test.  The Preview section will update with the fields parsed from the raw log.
 
-![My Squid With Sample](mysquid_grok_sample.png)
+![My Squid With Sample](images/mysquid_grok_sample.png)
 
 6. Click Save.
 7. Verify that sensor name and topic name are "mysquid" with NO extra spaces or special characters.  Click Save on the mysquid sensor.
@@ -68,7 +68,7 @@ After events are enriched and triaged, metron stores the events in an index.  Th
 1. Enter the Kibana url in the browser:
 http://***metron_host_name***:5000
 2. Select Dev Tools from the left hand side of the kibana page.  The Dev Tools console is an easy way to interact with the index REST api.  If the Welcome window appears, click the Get to work button.
-![Kibana Dev Tools](kibana_create_es_template.png)
+![Kibana Dev Tools](images/kibana_create_es_template.png)
 3. Paste the following command into the left side of Dev Tools window:
 
 ```
@@ -248,40 +248,40 @@ PUT _template/mysquid
 1. Enter the Nifi URL in your browser:
  http://***metron_host_name***:9090/nifi/
 2. The Nifi flow on the canvas tails the squid access.log and sends the lines to the PublishKafka.  PublishKafka breaks the log sample into individual lines and writes each line as a Kafka message to the squid topic.
-<img src="nifi_01.png" width="50%" height="50%" title="Original Nifi Flow">
+<img src="images/nifi_01.png" width="50%" height="50%" title="Original Nifi Flow">
 
 3. Right click on the PublishSquidToMetron processor and select Copy.
 
 4. Right click on an empty area of the canvas and select Paste.  
-![Pasted Nifi PublishSquidToMetron](nifi_02.png)
+![Pasted Nifi PublishSquidToMetron](images/nifi_02.png)
 
 5. Right click on the copy of PublishSquidToMetron and select Configure.
 
 6. Click on the Settings tab and change the name to PublishMySquidToMetron.
-<img src="nifi_04.png" width="60%" height="60%" title="Change Processor Name">
+<img src="images/nifi_04.png" width="60%" height="60%" title="Change Processor Name">
 
 7. Click the Properties tab and change Topic Name to mysquid.
-<img src="nifi_03.png" width="60%" height="60%" title="Change Topic Name">
+<img src="images/nifi_03.png" width="60%" height="60%" title="Change Topic Name">
 
 8. Click Apply to save the changes.
 
 9. Hover the cursor over the Read Squid Log processor until the connect icon appears.   Click and drag the flow to the middle of the PublishMySquidToMetron.  Drop the cursor and the Create Connection dialog appears.
-<img src="nifi_05.png" width="50%" height="50%" title="Create Connection">
+<img src="images/nifi_05.png" width="50%" height="50%" title="Create Connection">
 
 10. Click Add.
 
 11. The flow should look as below:
-<img src="nifi_06.png" width="60%" height="60%" title="Flow with Mysquid">
+<img src="images/nifi_06.png" width="60%" height="60%" title="Flow with Mysquid">
 
 12.  The flow can now write squid data to both topics or either topic.  It will be easier to see what is happening if we stop writing to the squid topic.   
 13. Right click on PublishSquidToMetron and select Stop.
 14. Right click on PublishMySquidToMetron and select Start.
-<img src="nifi_complete_mysquid_started.png" width="60%" height="60%" title="Mysquid Complete Flow">
+<img src="images/nifi_complete_mysquid_started.png" width="60%" height="60%" title="Mysquid Complete Flow">
 
 15. Squid events should now be flowing to the mysquid sensor.
 16. Set the browser to use the Metron proxy to try out the mysquid parser.
 17. Open Metron Alerts UI.  The Metron Alerts UI will now show mysquid events.
-<img src="alerts_ui_mysquid.png" width="75%" height="75%" title="Alerts UI with mysquid events">
+<img src="images/alerts_ui_mysquid.png" width="75%" height="75%" title="Alerts UI with mysquid events">
 
 18.  Congratulations!  You are now ingesting squid logs.  The next step is to add enrichments.
 
