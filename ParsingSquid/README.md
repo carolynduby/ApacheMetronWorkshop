@@ -68,13 +68,12 @@ Now we will build a mysquid sensor from scratch using a grok parser.
 6. Click Save.
 7. Verify that sensor name and topic name are "mysquid" with NO extra spaces or special characters.  Click Save on the mysquid sensor.
 7. The mysquid sensor appears in the management UI.  Click on the pencil icon to edit the mysquid sensor.  The mysquid configuration opens.
-8. Click on the Advanced button.   
 9. Scroll down to the Parser Config section.   
 10.  In the enter field point, enter timestampField.
 11. In enter value, enter timestamp.
 
 <img src="images/timestamp_parser_config.png" width="30%" height="30%" title="Setting the timestamp field">
-12. Click the + button. 
+
 13. Click the Save button.
 ## Installing the mysquid index template
 After events are enriched and triaged, metron stores the events in an index.  The index template specifies how to interpret the metron events and how to index strings using either a keyword or full text search.
