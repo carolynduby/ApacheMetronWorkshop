@@ -295,6 +295,9 @@ PUT _template/mysquid
 
 15. Set the browser to use the Metron proxy to start data flowing to the mysquid topic.  Enter google or a news site URL or any other URL that creates web request traffic to the squid proxy. 
 16. When log lines are flowing to the mysquid sensor, the In field of the PublishMySquidToMetron processor should be greater than zero. 
+
+<img src="images/nifi_input_annotated.png" width="60%" height="60%" title="Mysquid Complete Flow">
+
 17. Open Metron Alerts UI.  In a few minutes the Metron Alerts UI show mysquid events. 
 <img src="images/alerts_ui_mysquid.png" width="75%" height="75%" title="Alerts UI with mysquid events">
 
