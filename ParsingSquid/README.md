@@ -46,7 +46,8 @@ Now we will build a mysquid sensor from scratch using a grok parser.
 	Kafka Topic: mysquid
 	Parser Type: Grok
 ```
-![Create My Squid Sensor](mysquid_create_sensor.png){:height="50%" width="50%"}
+
+<img src="mysquid_create_sensor.png" width="50%" height="50%" title="Create My Squid Sensor">
 
 4. Click to expand the Grok Statement.   Copy and paste the grok expression below to the right of the MYSQUID grok expression name:
 
