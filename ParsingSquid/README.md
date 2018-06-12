@@ -293,12 +293,14 @@ PUT _template/mysquid
 14. Right click on PublishMySquidToMetron and select Start.
 <img src="images/nifi_complete_mysquid_started.png" width="60%" height="60%" title="Mysquid Complete Flow">
 
-15. Squid events should now be flowing to the mysquid sensor.
-16. Set the browser to use the Metron proxy to try out the mysquid parser.
-17. Open Metron Alerts UI.  The Metron Alerts UI will now show mysquid events.
+15. Set the browser to use the Metron proxy to start data flowing to the mysquid topic.  Enter google or a news site URL or any other URL that creates web request traffic to the squid proxy. 
+16. When log lines are flowing to the mysquid sensor, the In field of the PublishMySquidToMetron processor should be greater than zero. 
+17. Open Metron Alerts UI.  In a few minutes the Metron Alerts UI show mysquid events. 
 <img src="images/alerts_ui_mysquid.png" width="75%" height="75%" title="Alerts UI with mysquid events">
 
-18.  Congratulations!  You are now ingesting squid logs.  The next step is to add enrichments.
+
+
+18.  Congratulations!  You are now ingesting squid log events.  The next step is to add enrichments.
 
 ## References
 
