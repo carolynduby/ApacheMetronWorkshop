@@ -16,13 +16,14 @@ After this lab you will be able to:
  4. The Metron Management UI opens showing the sensors configured in Metron and their operational state (running/stopped and latency).
    ![Metron Management Screen](images/metron_management.png)
    
-## Opening the Metron Analyst UI
- 1. The Metron analyst UI shows enriched and triaged events stored in the Metron index.  From the Analyst UI, you can filter events, view event fields, and sort events.  You can also escalate, add comments to, or group events. 
+## Opening the Metron Alerts UI
+ 1. The Metron Alerts UI shows enriched and triaged events stored in the Metron index.  From the Alerts UI, you can filter events, view event fields, and sort events.  You can also escalate, add comments to, or group events. 
  6. Open your browser to http://*metron_host_name*:4201/ where *metron_host_name* is the name of the host provided to you in the workshop materials.
  7. When prompted for the password enter metron for the user and metron for the password.  
  ![Metron Login Screen](images/metron_login.png)
- 8. The Metron Analyst UI opens showing the sensors configured in metron and their operational state (running/stopped and latency).
+ 8. The Metron Alerts UI opens showing the sensors configured in metron and their operational state (running/stopped and latency).
    ![Metron Alerts Screen](images/metron_alerts.png)
+9. Consult the [Viewing Alerts User Guid](https://docs.hortonworks.com/HDPDocuments/HCP1/HCP-1.5.0/bk_user-guide/content/displaying_alerts.html) for more information on how to use the Alerts UI.
 ## Opening the Ambari UI
  1. Open Ambari to view the status of the Metron infrastructure and start, stop, and restart services.  Ambari also configures, installs and upgrades Metron software.
  2. Open your browser to http://*metron_host_name*:8080/ where *metron_host_name* is the name of the host provided to you in the workshop materials.
