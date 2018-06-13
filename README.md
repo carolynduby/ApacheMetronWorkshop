@@ -7,7 +7,7 @@ After this workshop you will be able to:
 1. [Open and describe the purpose of the Metron UIs.](01_GettingStarted/README.md)
 1. [Parse and normalize squid log format using a Grok parser.](02_ParsingSquid/README.md)
 2. [Enrich squid events with geocoding and field transformations.](03_EnrichingSquid/README.md)
-3. [Triage squid events](04_TriageSquid/README.md)
+3. [Triage squid events](04_TriagingSquid/README.md)
 4. Detect anomalous authentication events.
 
 ## Required Metron Version 
