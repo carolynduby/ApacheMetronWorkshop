@@ -38,8 +38,8 @@ For the workshop you will be provided with a single node version Metron installa
 |Credential| Value |
 |--|--|
 |Metron Host Name  | Provided to you  |
-|Metron Management UI|http://*metron_host_name*:4200/|
-|Metron Alerts UI|http://*metron_host_name*:4201/
+|Metron Management UI|http://*metron_host_name*:4200|
+|Metron Alerts UI|http://*metron_host_name*:4201|
 |Metron Mgmt/Alerts Credentials|metron:metron|
 |Ambari URL|http://*metron_host name*:8080|
 |Ambari credentials|admin:admin|
