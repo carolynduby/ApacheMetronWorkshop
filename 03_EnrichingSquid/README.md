@@ -79,6 +79,9 @@ with the following text:
 ![alerts with transformations](images/alerts_with_transformations.png)
 9.  Congratulations!   You have enriched events!  The next step is to triage the events.
 
+## Next Lab
+[Triaging squid events.](../04_TriagingSquid/README.md)
+
 ## References
 
 [Stellar Quick Reference](https://docs.hortonworks.com/HDPDocuments/HCP1/HCP-1.5.0/bk_stellar-quick-ref/bk_stellar-quick-ref.pdf)
