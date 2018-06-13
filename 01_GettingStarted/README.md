@@ -53,4 +53,4 @@ For the workshop you will be provided with a single node version Metron installa
 |zoomdata credentials|admin:Metron1234!|
 
 ## Next Lab
-(Parsing squid logs.)[..\02_ParsingSquid\README.md)
+[Parsing squid logs.](..\02_ParsingSquid\README.md)
