@@ -77,7 +77,7 @@ with the following text:
 7. Generate more squid log entries.
 8. Open the Metron Alerts UI.  The latest squid events will have new fields called full_hostname and domain_without_subdomains.  The fields are derived from the url extracted from the original log entry. 
 
-<img src="images/alerts_with transformations.png" width="50%" height="50%" title="Transformations in Alerts UI">
+<img src="images/alerts_with transformations.png" width="80%" height="80%" title="Transformations in Alerts UI">
 
 9.  Congratulations!   You have enriched events!  The next step is to triage the events.
 
