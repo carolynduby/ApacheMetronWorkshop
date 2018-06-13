@@ -305,6 +305,9 @@ PUT _template/mysquid
 
 18.  Congratulations!  You are now ingesting squid log events.  The next step is to add enrichments.
 
+## Next Lab
+[Enriching squid logs.](../03_EnrichingSquid/README.md)
+
 ## References
 
 [Metron Run Book](https://docs.hortonworks.com/HDPDocuments/HCP1/HCP-1.5.0/bk_runbook/bk_runbook.pdf)
