@@ -46,7 +46,7 @@ Click the >> icon to the right of Raw Json in the Advanced section.
 ![Edit advanced raw json](images/edit_advanced_raw_json.png)
 
 
-![config before transformations](images/transformations_config_before.png)
+![config before transformations](images/transformation_config_before.png)
 
 4. On the right side, in the Sensor Parser Config, replace the text:
 ```
@@ -70,13 +70,15 @@ with the following text:
 	]
 ```
 
-![transformation config after](images/transformation_config_after.png)
+![transformation config after](images/transformations_config_after.png)
 
 5. Click Save under the raw json editors. 
 6. Click Save on the lower left of the Sensor configuration file.
 7. Generate more squid log entries.
 8. Open the Metron Alerts UI.  The latest squid events will have new fields called full_hostname and domain_without_subdomains.  The fields are derived from the url extracted from the original log entry. 
-![alerts with transformations](images/alerts_with_transformations.png)
+
+![alerts with transformations](images/alerts_with transformations.png)
+
 9.  Congratulations!   You have enriched events!  The next step is to triage the events.
 
 ## Next Lab
