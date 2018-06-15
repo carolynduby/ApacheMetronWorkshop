@@ -105,6 +105,8 @@ Once a potential typosquatted domain is identified, investigated and found to be
 ```
 "is_potential_typosquat := not (ENRICHMENT_EXISTS('domain_whitelist', domain_without_tld, 'enrichment', 't')) && BLOOM_EXISTS(OBJECT_GET('/tmp/reference/alexa10k_filter.ser'), domain_without_tld)",
 ```
+<img src="images/domain_whitelist.png" width="95%" height="95%" title="Domain Whitelist">
+
 5. Click Save under the Raw Json section.
 6. Click Save on the sensor configuration.
 7. Open cnn.com and npr.org in browser connected to the Metron proxy.
