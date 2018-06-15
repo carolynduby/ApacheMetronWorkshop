@@ -12,7 +12,7 @@ The geo enrichment applied to an ip address instructs Metron to find the physica
 
 3. Click on the >> icon to the right of the Schema section.
 
-<img src="images/edit_schema.png" width="50%" height="50%" title="Edit mysquid schema">
+<img src="images/edit_schema.png" width="30%" height="30%" title="Edit mysquid schema">
 
 4. Click the pencil icon to the right of the ip_dst_addr field.
 
@@ -28,7 +28,7 @@ The geo enrichment applied to an ip address instructs Metron to find the physica
 9. Open the Metron Alerts UI.  The events will now have geo locations on their destination ip addresses.
 10. Click between the columns to open the event detail.   The components of the geo enrichments begin with enrichments:geo:ip_dst_addr.   The geocoding includes the following attributes for eac known ip address: city, country, latitude, longitude, postal code, DMA code, location ID, and location point. 
 
-<img src="images/geo_code_enrich_detail.png" width="50%" height="50%" title="Geo code enrichments details">
+<img src="images/geo_code_enrich_detail.png" width="30%" height="30%" title="Geo code enrichments details">
 
 ## Adding field transformations
 Field transformations add new fields to the event that are derived from existing fields.   Transformations prepare data for triaging, applying machine learning models or further analytics in the     
