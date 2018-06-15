@@ -65,11 +65,11 @@ For this example, we use a very simple triage rule to detect [typosquatting](htt
 }
 ```
 
-<img src="images/alerts_with_transformations.png" width="95%" height="95%" title="Transformations in Alerts UI">
+<img src="images/enrichments_after.png" width="95%" height="95%" title="Enrichments After">
 
 4. Click the Save button below the json. 
 5. Click the Save button at the bottom of the mysquid sensor configuration.
-6. Enter cnn.com or npr.com in the browser connected to the Metron proxy..   
+6. Enter cnn.com or npr.com in the browser connected to the Metron proxy.
 7. Open the Metron Alerts UI.   
 8. In the Score column you will see events with non-zero scores and the is_alert field set to true.  
 
@@ -77,7 +77,7 @@ For this example, we use a very simple triage rule to detect [typosquatting](htt
 
 9. The event fields shown in the columns of the UI are configurable.  If you want to view the columns as they appear in the screen shot, click the gear icon to the left of the Actions button.  Check the Score, id, timestamp, source:type, domain_without_subdomains and is_alert fields.  Remove the check from all other columns.  Click Save.   By default, the columns after the score, id and timestamp are displayed from left to right in alphabetical order by field name.  You can change the order by clicking on the up or down button to move the columns displayed up or down.  After changing the order, click Save. 
 
-<img src="images/configure_columns.png" width="95%" height="95%" title="Configure Metron Alerts Columns">
+<img src="images/configure_columns.png" width="75%" height="75%" title="Configure Metron Alerts Columns">
 
 9. Click on the Score header to sort the events ascending by Score.   Click again to sort descending by Score.  A downward arrow appears next to the Score header when sorted descending by Score.
 
@@ -85,7 +85,7 @@ For this example, we use a very simple triage rule to detect [typosquatting](htt
 
 10.  Click between the columns of one of the Scored alerts to view the alert details.  The fields beginning with threat:triage:rules show the results of all the triage rules.   The threat:triage:score field is the aggregated score of the event.  If there were more than one triage rule, this field would contain the score combining the results from all the rules.  The is_alert field is set only if the triage rules indicate the event is an alert.   
 
-<img src="images/triage_fileds.png" width="95%" height="95%" title="Triage Fields">
+<img src="images/triage_fields.png" width="95%" height="95%" title="Triage Fields">
 
 11. To see all the alerts for a particular domain, click on the domain name.   The Alerts UI displays only the alerts with the selected domain name.
 
