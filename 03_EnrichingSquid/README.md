@@ -12,17 +12,15 @@ The geo enrichment applied to an ip address instructs Metron to find the physica
 
 3. Click on the >> icon to the right of the Schema section.
 
-![Edit mysquid schema](images/edit_schema.png)
-
+<img src="images/edit_schema.png" width="50%" height="50%" title="Edit mysquid schema">
 
 4. Click the pencil icon to the right of the ip_dst_addr field.
 
 ![Edit IP dst addr enrichments](images/edit_ip_dst_addr_enrich.png)
 
-
 5. Select geo from the Enrichments drop down.   
 
-![Edit IP dst addr enrichments](images/ip_dst_addr_geo.png)
+<img src="images/ip_dst_addr_geo.png" width="50%" height="50%" title="Edit IP dst addr enrichments">
 
 6. Click Save.
 7. Scroll to the bottom of the screen and click Save.
@@ -30,7 +28,7 @@ The geo enrichment applied to an ip address instructs Metron to find the physica
 9. Open the Metron Alerts UI.  The events will now have geo locations on their destination ip addresses.
 10. Click between the columns to open the event detail.   The components of the geo enrichments begin with enrichments:geo:ip_dst_addr.   The geocoding includes the following attributes for eac known ip address: city, country, latitude, longitude, postal code, DMA code, location ID, and location point. 
 
-![Geo code enrichments details](images/geo_code_enrich_detail.png)
+<img src="images/geo_code_enrich_detail.png" width="50%" height="50%" title="Geo code enrichments details">
 
 ## Adding field transformations
 Field transformations add new fields to the event that are derived from existing fields.   Transformations prepare data for triaging, applying machine learning models or further analytics in the     
@@ -43,8 +41,7 @@ Field transformations add new fields to the event that are derived from existing
 
 Click the >> icon to the right of Raw Json in the Advanced section. 
 
-![Edit advanced raw json](images/edit_advanced_raw_json.png)
-
+<img src="images/edit_advanced_raw_json.png" width="50%" height="50%" title="Edit advanced raw json">
 
 ![config before transformations](images/transformation_config_before.png)
 

@@ -1,0 +1,13 @@
+{
+    "config" : {
+       "zk_quorum" : "localhost:2181"
+       ,"columns" : {
+           "domain" : 0
+          ,"source" : 1
+       }
+       ,"indicator_column" : "domain"
+       ,"type" : "domain_whitelist"
+       ,"separator" : ","
+    }
+    , "extractor" : "CSV"
+}
