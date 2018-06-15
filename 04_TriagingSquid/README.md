@@ -85,7 +85,7 @@ For this example, we use a very simple triage rule to detect [typosquatting](htt
 
 10.  Click between the columns of one of the Scored alerts to view the alert details.  The fields beginning with threat:triage:rules show the results of all the triage rules.   The threat:triage:score field is the aggregated score of the event.  If there were more than one triage rule, this field would contain the score combining the results from all the rules.  The is_alert field is set only if the triage rules indicate the event is an alert.   
 
-<img src="images/triage_fields.png" width="30%" height="30%" title="Triage Fields">
+<img src="images/triage_fields.png" width="40%" height="40%" title="Triage Fields">
 
 11. To see all the alerts for a particular domain, click on the domain name.   The Alerts UI displays only the alerts with the selected domain name.
 
