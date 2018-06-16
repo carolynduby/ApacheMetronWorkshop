@@ -8,13 +8,18 @@ After this lab you will be able to:
 ## Generate Squid Access Events
 1. Your Metron host comes with a squid proxy installed.   Configure your proxy settings to use your squid proxy.  If you are not able to change your proxy settings, skip this step and use curl commands to generate traffic.  
 
+### Chrome Proxy
+
 The easiest way to control your proxy from Chrome is to install and extension such as Proxy SwitchySharp.  An extension enables you to select a menu item in Chrome to switch between your regular settings and your Metron proxy easily.   
 
 On Mac open Chrome and select Chrome > Preferences from the main menu.  Scroll to the bottom of the settings page and click the Show advanced settings link.  Locate the Network section and click the Change proxy settings button.   Check Web Proxy (HTTP) and enter your Metron host name and the squid port 3128.  Check Secure Web Proxy (HTTPS) and enter your Metron name and the squid port 3128.  Click the OK button and then the Apply button to save your changes. 
 
+### OSX Safari Proxy
+On OSX go to System Preferences > Network > Wi-Fi. Click the Advanced button. Select the Proxies Tab, and check the Web Proxy (HTTP) and enter your Metron host name and the squid port 3128.
+
+### Windows Proxy
+
 On Windows, follow the manual instructions on [this page](http://www.dummies.com/computers/operating-systems/windows-10/how-to-set-up-a-proxy-in-windows-10/)
-
-
 
 2. In the browser configured with the Metron squid proxy, open a web site that generates web requests such as google.com or a news website.  
 
