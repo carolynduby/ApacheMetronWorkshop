@@ -20,7 +20,7 @@ On Windows, follow the manual instructions on [this page](http://www.dummies.com
 
 To generate data using curl, open a command line tool and enter:
 ```
-curl -l --proxy *metron_host_name*:3128 *web_url*
+curl -I --proxy *metron_host_name*:3128 *web_url*
 ```
  
 For example to access google using a proxy, 
