@@ -51,7 +51,7 @@ Now we will build a mysquid sensor from scratch using a grok parser.
 	Kafka Topic: mysquid
 	Parser Type: Grok
 ```
-
+Don't worry if you see the "No Matching Kafka Topic", the Kafka Topic will be created automatically on save.  
 <img src="images/mysquid_create_sensor.png" width="35%" height="35%" title="Create My Squid Sensor">
 
 4. Click to expand the Grok Statement.   Copy and paste the grok expression below to the right of the MYSQUID grok expression name:
