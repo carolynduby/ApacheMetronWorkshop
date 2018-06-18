@@ -12,10 +12,10 @@ After this lab you will be able to:
 
 The easiest way to control your proxy from Chrome is to install and extension such as Proxy SwitchySharp.  An extension enables you to select a menu item in Chrome to switch between your regular settings and your Metron proxy easily.   
 
-On Mac open Chrome and select Chrome > Preferences from the main menu.  Scroll to the bottom of the settings page and click the Show advanced settings link.  Locate the Network section and click the Change proxy settings button.   Check Web Proxy (HTTP) and enter your Metron host name and the squid port 3128.  Check Secure Web Proxy (HTTPS) and enter your Metron name and the squid port 3128.  Click the OK button and then the Apply button to save your changes. 
+On Mac open Chrome and select Chrome > Preferences from the main menu.  Scroll to the bottom of the settings page and click the Show advanced settings link.  Locate the Network section and click the Change proxy settings button. Check Web Proxy (HTTP) and enter `mobius.local` and the squid port 3128.  Check Secure Web Proxy (HTTPS) and enter your Metron name and the squid port 3128.  Click the OK button and then the Apply button to save your changes. 
 
 ### OSX Safari Proxy
-On OSX go to System Preferences > Network > Wi-Fi. Click the Advanced button. Select the Proxies Tab, and check the Web Proxy (HTTP) and enter your Metron host name and the squid port 3128.
+On OSX go to System Preferences > Network > Wi-Fi. Click the Advanced button. Select the Proxies Tab, and check the Web Proxy (HTTP) and enter `mobius.local` and the squid port 3128.
 
 ### Windows Proxy
 
@@ -25,15 +25,15 @@ On Windows, follow the manual instructions on [this page](http://www.dummies.com
 
 To generate data using curl, open a command line tool and enter:
 ```
-curl -I --proxy *metron_host_name*:3128 *web_url*
+curl -I --proxy mobius.local:3128 *web_url*
 ```
  
 For example to access google using a proxy, 
 ```
-curl -I --proxy ec2-35-157-246-126.eu-central-1.compute.amazonaws.com:3128 http://google.com
+curl -I --proxy `mobius.local`:3128 http://google.com
 ```
 
-3. Open the Metron alerts ui by entering http://***metron_host_name***:4201 in the browser. 
+3. Open the Metron alerts ui by entering http://mobius.local:4201 in the browser. 
 
 By default you will see the most recent events at the top of the UI.  At this point you should see some squid events with recent timestamps in the alerts ui.
 ![Metron Alerts Squid](images/metron_alerts_squid.png)
@@ -83,7 +83,7 @@ Don't worry if you see the "No Matching Kafka Topic", the Kafka Topic will be cr
 ## Installing the mysquid index template
 After events are enriched and triaged, metron stores the events in an index.  The index template specifies how to interpret the metron events and how to index strings using either a keyword or full text search.
 1. Enter the Kibana url in the browser:
-http://***metron_host_name***:5000
+http://mobius.local:5000
 2. Select Dev Tools from the left hand side of the kibana page.  The Dev Tools console is an easy way to interact with the index REST api.  If the Welcome window appears, click the Get to work button.
 
 <img src="images/kibana_get_working.png" width="60%" height="60%" title="Kibana Get to Work">
@@ -266,7 +266,7 @@ PUT _template/mysquid
 2. Push the play button on the mysquid sensor to start the parser.
 ## Moving squid access.log lines to Kafka for processing by Metron
 1. Enter the Nifi URL in your browser:
- http://***metron_host_name***:9090/nifi/
+ http://mobius.local:9090/nifi/
 2. The Nifi flow on the canvas tails the squid access.log and sends the lines to the PublishKafka.  PublishKafka breaks the log sample into individual lines and writes each line as a Kafka message to the squid topic.
 <img src="images/nifi_01.png" width="50%" height="50%" title="Original Nifi Flow">
 
