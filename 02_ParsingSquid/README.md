@@ -30,7 +30,7 @@ curl -I --proxy mobius.local:3128 *web_url*
  
 For example to access google using a proxy, 
 ```
-curl -I --proxy `mobius.local`:3128 http://google.com
+curl -I --proxy mobius.local:3128 http://google.com
 ```
 
 3. Open the Metron alerts ui by entering http://mobius.local:4201 in the browser. 
