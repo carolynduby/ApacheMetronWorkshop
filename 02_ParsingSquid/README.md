@@ -288,7 +288,7 @@ PUT _template/mysquid
 9. Hover the cursor over the Read Squid Log processor until the connect icon appears.   Click and drag the flow to the middle of the PublishMySquidToMetron.  Drop the cursor and the Create Connection dialog appears.
 <img src="images/nifi_05.png" width="50%" height="50%" title="Create Connection">
 
-10. Click Add.
+10. Click Add and make sure you Start the processor by clicking Start in the Operate panel.
 
 11. The flow should look as below:
 <img src="images/nifi_06.png" width="60%" height="60%" title="Flow with Mysquid">
@@ -305,7 +305,6 @@ PUT _template/mysquid
 
 17. Open Metron Alerts UI.  In a few minutes the Metron Alerts UI show mysquid events. 
 <img src="images/alerts_ui_mysquid.png" width="75%" height="75%" title="Alerts UI with mysquid events">
-
 
 
 18.  Congratulations!  You are now ingesting squid log events.  The next step is to add enrichments.
