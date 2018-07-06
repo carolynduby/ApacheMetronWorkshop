@@ -16,7 +16,7 @@ After this lab you will be able to:
 
 Edit your `hosts` file and add a entry to your AWS instance. First find your host IP adress that was provided to you. On your laptop do:
 
-1. `sudo vi hosts`
+1. `sudo vi /etc/hosts`
 2. Add `host_ip mobius.local`, where you replace *host_ip* with the real IP and save the file. 
 3. You should now be able to access Ambari at http://mobius.local:8080/
 
