@@ -117,5 +117,32 @@ If you have earlier deployed profiles, you can get their values by `PROFILE_GET`
 PROFILE_GET( "locations_by_user", "user1", PROFILE_FIXED(120, "DAYS"))
 ```
 
+# Deploy you first profile
+
+Load the Metron environment variables: `source /etc/default/metron`
+
+Edit `/usr/hcp/current/metron/config/zookeeper/profiler.json` using your favorite editor (e.g. vi or emacs)
+
+Add the `hello-world` profile and save the file
+
+```
+{
+      "profile": "hello-world",
+      "onlyif":  "exists(ip_src_addr)",
+      "foreach": "ip_src_addr",
+      "init":    { "count": "0" },
+      "update":  { "count": "count + 1" },
+      "result":  "count"
+}
+```
+
+Push the updated profiler configuration
+
+```
+$ cd $METRON_HOME
+$ bin/zk_load_configs.sh -m PUSH -i config/zookeeper/ -z localhost:2181
+```
+
+
 
 
