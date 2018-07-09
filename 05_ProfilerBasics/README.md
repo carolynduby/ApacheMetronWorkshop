@@ -90,8 +90,7 @@ profile=hello-world, groups=[], value=3, entity=10.0.0.1}]
 Once you are happy with your profile against a controlled data set, it can be useful to introduce more complex, live data. This example extracts 10 messages of live, enriched telemetry to test your profile(s).
 
 ```
-[Stellar]>>> %define bootstrap.servers := "node1:6667"
-node1:6667
+[Stellar]>>> %define bootstrap.servers := "localhost:6667"
 [Stellar]>>> msgs := KAFKA_GET("indexing", 10)
 [Stellar]>>> LENGTH(msgs)
 10
