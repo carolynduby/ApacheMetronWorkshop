@@ -8,7 +8,7 @@ After this workshop you will be able to:
 1. [Parse and normalize squid log format using a Grok parser.](02_ParsingSquid/README.md)
 2. [Enrich squid events with geocoding and field transformations.](03_EnrichingSquid/README.md)
 3. [Triage squid events](04_TriagingSquid/README.md)
-4. Detect anomalous authentication events.
+4. [Profiler Basics](05_ProfilerBasics/README.md)
 
 ## Required Metron Version 
 
