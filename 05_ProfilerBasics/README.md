@@ -96,6 +96,12 @@ Once you are happy with your profile against a controlled data set, it can be us
 10
 ```
 
+If you don't get any messages, fire off a few squid client commands:
+
+```
+curl -I --proxy ec2-54-215-245-197.us-west-1.compute.amazonaws.com:3128 https://cnn.com
+```
+
 Apply those 10 messages to your profile(s).
 
 ```
