@@ -4,6 +4,8 @@ This section will describe how to create your very first “Hello, World” prof
 
 Creating and refining profiles is an iterative process. Iterating against a live stream of data is slow, difficult and error prone. The Profile Debugger was created to provide a controlled and isolated execution environment to create, refine and troubleshoot profiles.
 
+Metron leverages the Stellar DSL for enhanced productivity. (Stellar Reference Guide)[https://metron.apache.org/current-book/metron-stellar/stellar-common/index.html]
+
 ## Launch the Stellar Shell. We will leverage the Profiler Debugger from within the Stellar Shell.
 
 ```
@@ -101,4 +103,14 @@ Apply those 10 messages to your profile(s).
 [Stellar]>>> PROFILER_APPLY(msgs, profiler)
   Profiler{1 profile(s), 10 messages(s), 10 route(s)}
 ```
+
+# Access deployed profiles
+
+If you have earlier deployed profiles, you can get their values by `PROFILE_GET`. For example:
+
+```
+PROFILE_GET( "locations_by_user", "user1", PROFILE_FIXED(120, "DAYS"))
+```
+
+
 
