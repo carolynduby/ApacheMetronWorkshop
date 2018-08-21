@@ -21,8 +21,6 @@ mysql -u root < hcp_metron_rest_db.sql
 # install mysql connector
 sudo yum -y install mysql-connector-java*
 ls -al /usr/share/java/mysql-connector-java.jar
-cd /var/lib/ambari-server/resources/
-ln -s /usr/share/java/mysql-connector-java.jar mysql-connector-java.jar
 
 # configure the machine and install ambari
 export ambari_version="2.6.2.2"
