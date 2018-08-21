@@ -13,7 +13,8 @@ sudo umask 0022
 wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
 sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm
 sudo yum -y install mysql-community-server
-sudo service mysqld start
+sudo systemctl enable mysqld
+sudo systemctl start mysqld
 
 # Set up the metron users
 mysql -u root < hcp_metron_rest_db.sql

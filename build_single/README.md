@@ -32,9 +32,9 @@ cd ApacheMetronWorkshop-master/build_single/
 ./sethostname.sh
 ```
 
-4. Log into the host and run the buld script.
+4. Log into the host and run the buld script.  The build script output will print to the console and be logged to build_single.log.
 
 ```
 cd ApacheMetronWorkshop-master/build_single/
-./build_single.sh
+bash -x ./build_single.sh 2>&1 | tee -a build_single.log
 ```

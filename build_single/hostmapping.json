@@ -6,7 +6,7 @@
       "name" : "host_group_1",
       "hosts" : [
         {
-          "fqdn" : "mobius.local"
+          "fqdn" : "mobius.local.localdomain"
         }
       ]
     }
