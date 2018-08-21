@@ -1,5 +1,7 @@
 # set the hostname
 sudo sed -i 's/localhost/mobius.local localhost/' /etc/hosts
+sudo hostname mobius.local
+sudo systemctl restart network
 
 ## add autorestart command
 sudo sh -c "echo 'bash /home/centos/start_service.sh' >> /etc/rc.local"
@@ -50,5 +52,6 @@ sudo pip install requests
 sudo service ambari-agent restart
 
 # install the demo content
-cd typosquat
-./install_squid_enrichments.sh
+# don't run this yet, we need to setup metron with blueprint first
+# cd typosquat
+# ./install_squid_enrichments.sh
