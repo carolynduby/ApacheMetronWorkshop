@@ -1,0 +1,19 @@
+{
+  "config" : {
+    "columns" : {
+       "rank" : 0,
+       "domain" : 1
+    },
+    "value_transform" : {
+       "domain" : "DOMAIN_REMOVE_TLD(domain)"
+    },
+    "value_filter" : "LENGTH(domain) > 0",
+    "state_init" : "0L",
+    "state_update" : {
+       "state" : "state + LENGTH( DOMAIN_TYPOSQUAT( domain ))"
+                     },
+    "state_merge" : "REDUCE(states, (s, x) -> s + x, 0)",
+    "separator" : ","
+  },
+  "extractor" : "CSV"
+}

@@ -1,0 +1,55 @@
+{
+  "enrichment": {
+    "fieldMap": {
+      "geo": [
+        "ip_dst_addr"
+      ],
+      "stellar": {
+        "config": [
+          "domain_without_tld := DOMAIN_REMOVE_TLD(domain_without_subdomains)",
+          "is_potential_typosquat := BLOOM_EXISTS(OBJECT_GET('\/tmp\/reference\/alexa10k_filter.ser'), domain_without_tld)",
+          "domain_without_tld := null"
+        ]
+      }
+    },
+    "fieldToTypeMap": {
+      
+    },
+    "config": {
+      
+    }
+  },
+  "threatIntel": {
+    "fieldMap": {
+      "stellar": {
+        "config": [
+          "is_alert := (exists(is_alert) && is_alert) || is_potential_typosquat"
+        ]
+      }
+    },
+    "fieldToTypeMap": {
+      
+    },
+    "config": {
+      
+    },
+    "triageConfig": {
+      "riskLevelRules": [
+        {
+          "name": "Alexa 10k Typosquat Bloom",
+          "comment": "Inspect a bloom filter with potentially typosquatted domains from the top Alexa 10k",
+          "rule": "is_potential_typosquat != null && is_potential_typosquat",
+          "score": 50,
+          "reason": "FORMAT('%s is a potential typosquatted domain from the top 10k domains from alexa', domain_without_subdomains)"
+        }
+      ],
+      "aggregator": "MAX",
+      "aggregationConfig": {
+        
+      }
+    }
+  },
+  "configuration": {
+    
+  }
+}
