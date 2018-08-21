@@ -1,9 +1,6 @@
-# set the hostname
-sudo sed -i 's/localhost/mobius.local localhost/' /etc/hosts
-sudo hostname mobius.local
-sudo systemctl restart network
 
 ## add autorestart command
+sudo cp start_service.sh /home/centos
 sudo sh -c "echo 'bash /home/centos/start_service.sh' >> /etc/rc.local"
 
 #install epel repo
