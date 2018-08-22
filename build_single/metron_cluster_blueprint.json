@@ -220,7 +220,7 @@
           "compression.type" : "producer",
           "offsets.load.buffer.size" : "5242880",
           "controlled.shutdown.max.retries" : "3",
-          "offsets.topic.replication.factor" : "3",
+          "offsets.topic.replication.factor" : "1",
           "queued.max.requests" : "500",
           "auto.leader.rebalance.enable" : "true",
           "leader.imbalance.check.interval.seconds" : "300",
@@ -785,7 +785,7 @@
           "topology.fall.back.on.java.serialization" : "true",
           "logviewer.appender.name" : "A1",
           "storm.messaging.netty.server_worker_threads" : "1",
-          "supervisor.slots.ports" : "[6700, 6701]",
+          "supervisor.slots.ports" : "[6700, 6701, 6702, 6703, 6704, 6705]",
           "storm.zookeeper.connection.timeout" : "30000",
           "topology.tick.tuple.freq.secs" : "null",
           "storm.cluster.metrics.consumer.register" : "[{\"class\": \"org.apache.hadoop.metrics2.sink.storm.StormTimelineMetricsReporter\"}]",
@@ -1060,7 +1060,7 @@
       "metron-parsers-env" : {
         "properties_attributes" : { },
         "properties" : {
-          "parsers" : "bro,snort,yaf",
+          "parsers" : "squid",
           "parser_error_topic" : "indexing"
         }
       }
@@ -3271,7 +3271,7 @@
           "nifi.content.repository.archive.enabled" : "true",
           "nifi.flow.configuration.archive.dir" : "{{nifi_internal_dir}}/archive/",
           "nifi.security.keystore" : "{{nifi_keystore}}",
-          "nifi.web.http.host" : "{{nifi_node_nonssl_host}}",
+          "nifi.web.http.host" : "{{noop}}",
           "nifi.flowservice.writedelay.interval" : "500 ms",
           "nifi.remote.input.secure" : "{{nifi_ssl_enabled}}",
           "nifi.provenance.repository.max.storage.time" : "24 hours",
