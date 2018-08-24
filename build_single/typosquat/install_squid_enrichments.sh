@@ -13,15 +13,18 @@ sudo /usr/hcp/current/metron/bin/zk_load_configs.sh -z localhost:2181 -m PUSH -i
 
 # install squid proxy and set it to run on reboot
 sudo yum -y install squid
-sudo systemctl start squid
-sudo systemctl enable squid
 
 # modify the config to allow outside requests
 sudo sed  -i 's/http_access allow localhost$/http_access allow localhost\n\n# allow all requests\nacl all src 0.0.0.0\/0\nhttp_access allow all/' /etc/squid/squid.conf
 
+# start the service and enable it to run after reboot
+sudo systemctl start squid
+sudo systemctl enable squid
+
+
 export ZOOKEEPER_CONFIG_PATH=/usr/hcp/current/metron/config/zookeeper
 ## get the current metron configs
-sudo /usr/hcp/1.6.0.0-7/metron/bin/zk_load_configs.sh -z localhost:2181 -m PULL -f -o $ZOOKEEPER_CONFIG_PATH 
+sudo /usr/hcp/current/metron/bin/zk_load_configs.sh -z localhost:2181 -m PULL -f -o $ZOOKEEPER_CONFIG_PATH 
 ## insert the squid typosquat enrichments
 sudo cp squid_enrichments.json $ZOOKEEPER_CONFIG_PATH/enrichments/squid.json
 ## install the squid_enrichments json in zookeeper
@@ -31,4 +34,13 @@ sudo /usr/hcp/current/metron/bin/zk_load_configs.sh -z localhost:2181 -m PUSH -i
 
 # allow nifi to read squid logs
 sudo usermod -a -G squid nifi
-# TBD: set up the nifi flow to read squid
+
+# install the solr squid template
+export SOLR_HOME=/opt/lucidworks-hdpsearch/solr/
+export SOLR_USER=solr
+export METRON_HOME=/usr/hcp/current/metron
+
+sudo mkdir /usr/hcp/current/metron/config/schema/squid
+sudo cp ../../02_ParsingSquid/solr/* /usr/hcp/current/metron/config/schema/squid
+sudo su $SOLR_USER -c "$SOLR_HOME/bin/solr create -c squid -d $METRON_HOME/config/schema/squid/"
+
