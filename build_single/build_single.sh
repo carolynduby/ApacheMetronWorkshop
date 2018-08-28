@@ -2,6 +2,7 @@
 ## add autorestart command
 sudo cp start_service.sh /home/centos
 sudo sh -c "echo 'bash /home/centos/start_service.sh' >> /etc/rc.local"
+sudo chmod a+x /etc/rc.d/rc.local
 
 #install epel repo
 sudo yum -y install epel-release
