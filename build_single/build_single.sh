@@ -32,11 +32,11 @@ curl -sSL https://raw.githubusercontent.com/seanorama/ambari-bootstrap/master/am
 # register mysql with ambari
 sudo ambari-server setup --jdbc-db=mysql --jdbc-driver=/usr/share/java/mysql-connector-java.jar
  
-wget http://public-repo-1.hortonworks.com/HCP/centos7/1.x/updates/1.6.0.0/tars/metron/hcp-ambari-mpack-1.6.0.0-7.tar.gz
+wget -nv http://public-repo-1.hortonworks.com/HCP/centos7/1.x/updates/1.6.1.0/tars/metron/hcp-ambari-mpack-1.6.1.0-23.tar.gz
 wget http://public-repo-1.hortonworks.com/HDP-SOLR/hdp-solr-ambari-mp/solr-service-mpack-3.0.0.tar.gz
 wget http://public-repo-1.hortonworks.com/HDF/centos7/3.x/updates/3.1.2.0/tars/hdf_ambari_mp/hdf-ambari-mpack-3.1.2.0-7.tar.gz
 
-sudo ambari-server install-mpack --mpack=hcp-ambari-mpack-1.6.0.0-7.tar.gz --verbose
+sudo ambari-server install-mpack --mpack=hcp-ambari-mpack-1.6.1.0-23.tar.gz --verbose
 sudo ambari-server install-mpack --mpack=solr-service-mpack-3.0.0.tar.gz --verbose
 sudo ambari-server install-mpack --mpack=hdf-ambari-mpack-3.1.2.0-7.tar.gz --verbose
 
