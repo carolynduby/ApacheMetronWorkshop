@@ -55,7 +55,7 @@ For Windows 10 and 8:
  3. When prompted for the password enter admin for the user and admin for the password.
  4. The Ambari management pages open.
    ![Ambari Screen](images/ambari.png)
-5. The Quicklinks Ambari menu item launches the UIs for a service.   For example, select the M Management UI and Alerts UI  by selecting Services from the upper right and then Metron from the left.  Pull down quick links and select Management UI or Alerts UI to launch the Metron UIs.
+5. The Quicklinks Ambari menu item launches the UIs for a service.   For example, select the Management UI and Alerts UI  by selecting Services from the upper right and then Metron from the left.  Pull down quick links and select Management UI or Alerts UI to launch the Metron UIs.
 
 ## Single Node Metron Instance Quick Reference
 For the workshop you will be provided with a single node version Metron installation.  
