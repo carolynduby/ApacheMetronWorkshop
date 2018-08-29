@@ -12,4 +12,4 @@ After this workshop you will be able to:
 
 ## Required Metron Version 
 
-The labs are designed to work with Apache Metron 0.4.2 as packaged in Hortonworks Cyber Security Platform.  For more information consult the [HCP Release Notes](https://docs.hortonworks.com/HDPDocuments/HCP1/HCP-1.4.2/bk_release-notes/content/ch01.html)
+The labs are designed to work with Apache Metron 0.5.1 as packaged in Hortonworks Cyber Security Platform.  For more information consult the [HCP Release Notes](https://docs.hortonworks.com/HDPDocuments/HCP1/HCP-1.6.1/release-notes/content/hortonworks_cybersecurity_platform_1_6.1_release_notes.html)

@@ -39,6 +39,7 @@ sudo usermod -a -G squid nifi
 export SOLR_HOME=/opt/lucidworks-hdpsearch/solr/
 export SOLR_USER=solr
 export METRON_HOME=/usr/hcp/current/metron
+export ZOOKEEPER=localhost:2181/solr
 
 sudo mkdir /usr/hcp/current/metron/config/schema/squid
 sudo cp ../../02_ParsingSquid/solr/* /usr/hcp/current/metron/config/schema/squid
