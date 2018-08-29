@@ -55,7 +55,7 @@ curl -H "X-Requested-By: ambari" -X GET -u admin:admin http://localhost:8080/api
 7. Nifi will fail on startup.  There are a few passwords you need to enter.  
 7a. Open Ambari.  Open the Nifi Configs and locate the "Encrypt Configuration Master Key Password".  Enter any recommended 12 character password.
 
-8. In Ambari, open the Metron REST service configs and set Metron JDBC password to metron.
+8. In Ambari, open the Metron REST service configs and set Metron JDBC password to Myp@ssw0rd.
 
 9. Restart Nifi and Metron REST services.  Restart any services that are not running.
 

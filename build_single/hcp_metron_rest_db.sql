@@ -1,5 +1,5 @@
 CREATE DATABASE IF NOT EXISTS metronrest;
-CREATE USER 'metron'@'localhost' IDENTIFIED BY 'metron';
+CREATE USER 'metron'@'localhost' IDENTIFIED BY 'Myp@ssw0rd';
 GRANT ALL PRIVILEGES ON metronrest.* TO 'metron'@'localhost';
 use metronrest;
 create table if not exists users(

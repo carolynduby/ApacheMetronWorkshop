@@ -5,7 +5,7 @@
 ## Objectives
 After this lab you will be able to:
 
-1. Have your browser connect to the right domain for your metron instance.
+1. Connect your browser to your metron instance.
 2. Describe the main UIs for Metron.
 3. Describe the information contained in each UI.
 4. Open the UI and view the content.
@@ -71,11 +71,11 @@ For the workshop you will be provided with a single node version Metron installa
 |SSH key| Provided to you|
 |Ssh| ssh -i *ssh_key.pem* centos@*metron_host_name*
 |mysql console|mysql -u *user_name* -p|
-|mysqldb root|root:|
-|mysqldb metron|metron:Myp@ssw0rd |
-|mysqldb metron password|Myp@ssw0rd|
+|mysqldb root credentials|root:|
+|mysqldb metron credentials|metron:Myp@ssw0rd |
 |zoomdata url|http://mobius.local:6430|
 |zoomdata credentials|admin:Metron1234!|
+|solr admin UI|http://mobius.local:8983/solr/#/|
 
 ## Next Lab
 [Parsing squid logs.](../02_ParsingSquid/README.md)
