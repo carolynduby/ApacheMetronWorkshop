@@ -42,5 +42,6 @@ export METRON_HOME=/usr/hcp/current/metron
 
 sudo mkdir /usr/hcp/current/metron/config/schema/squid
 sudo cp ../../02_ParsingSquid/solr/* /usr/hcp/current/metron/config/schema/squid
-sudo su $SOLR_USER -c "$SOLR_HOME/bin/solr create -c squid -d $METRON_HOME/config/schema/squid/"
+sudo -E su $SOLR_USER -c "$METRON_HOME/bin/create_collection.sh squid"
 
+sudo -E su hdfs -c "$METRON_HOME/bin/geo_enrichment_load.sh -z localhost:2181"
