@@ -6,7 +6,7 @@ After this lab you will be able to:
 ## Adding a geocode enrichment
 The geo enrichment applied to an ip address instructs Metron to find the physical location of an ip address and add the location as enrichments to the event.  The ip locations can be used in triaging, hunting, map visualizations, and other analytics. 
 1. Open the Metron Configuration UI.
-2. Click on the pencil icon to the right of the mysquid sensor to change the sensor configuraiton.  The mysquid configuration opens.
+2. Click on the pencil icon to the right of the mysquid sensor to change the sensor configuration.  The mysquid configuration opens.
 
 ![Edit mysquid sensor](images/edit_mysquid.png)
 
@@ -26,7 +26,7 @@ The geo enrichment applied to an ip address instructs Metron to find the physica
 7. Scroll to the bottom of the screen and click Save.
 8. Configure your proxy to send web requests to the metron proxy or use curl.  Open google.com 
 9. Open the Metron Alerts UI.  The events will now have geo locations on their destination ip addresses.
-10. Click between the columns to open the event detail.   The components of the geo enrichments begin with enrichments:geo:ip_dst_addr.   The geocoding includes the following attributes for eac known ip address: city, country, latitude, longitude, postal code, DMA code, location ID, and location point. 
+10. Click between the columns to open the event detail.   The components of the geo enrichments begin with enrichments.geo.ip_dst_addr if using Solr or enrichments:geo:ip_dst_addr if using Elastic Search indices.   The geocoding includes the following attributes for each known ip address: city, country, latitude, longitude, postal code, DMA code, location ID, and location point. 
 
 <img src="images/geo_code_enrich_detail.png" width="30%" height="30%" title="Geo code enrichments details">
 
@@ -37,7 +37,7 @@ Field transformations add new fields to the event that are derived from existing
 
 ![Edit mysquid sensor](images/edit_mysquid.png)
 
-3. Metron configuration files are in json format.   Simple transformations can be added in the Configuration UI but our example requires more complex transformations.   Transformations are written in a platform specific language called [Stellar](https://docs.hortonworks.com/HDPDocuments/HCP1/HCP-1.6.1/stellar-quick-ref/content/introduction_to_stellar_language.html).
+3. Metron configuration files are in json format.   Simple transformations can be added in the Configuration UI but our example requires more complex transformations.   Transformations are written in a domain specific language called [Stellar](https://docs.hortonworks.com/HDPDocuments/HCP1/HCP-1.6.1/stellar-quick-ref/content/introduction_to_stellar_language.html).
 
 Click the >> icon to the right of Raw Json in the Advanced section. 
 
@@ -47,7 +47,7 @@ Click the >> icon to the right of Raw Json in the Advanced section.
 
 4. On the right side, in the Sensor Parser Config, replace the text:
 ```
-"fieldTransformations": []
+"fieldTransformations": [],
 ```
 with the following text:
 ```
@@ -64,7 +64,7 @@ with the following text:
 				"domain_without_subdomains": "DOMAIN_REMOVE_SUBDOMAINS(full_hostname)"
 			}
 		}
-	]
+	],
 ```
 
 ![transformation config after](images/transformations_config_after.png)
