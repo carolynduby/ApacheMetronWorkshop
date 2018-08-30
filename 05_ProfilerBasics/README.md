@@ -144,7 +144,9 @@ $ bin/zk_load_configs.sh -m PUSH -i config/zookeeper/ -z localhost:2181
 ```
 
 # References
+
 [Profile examples](https://docs.hortonworks.com/HDPDocuments/HCP1/HCP-1.6.1/analytics/content/profile_examples.html)
+
 [Accessing profiles](https://docs.hortonworks.com/HDPDocuments/HCP1/HCP-1.6.1/analytics/content/accessing_profiles.html)
 
 
