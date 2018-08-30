@@ -149,4 +149,5 @@ $ bin/zk_load_configs.sh -m PUSH -i config/zookeeper/ -z localhost:2181
 
 [Accessing profiles](https://docs.hortonworks.com/HDPDocuments/HCP1/HCP-1.6.1/analytics/content/accessing_profiles.html)
 
+[Auth profile presentation by Casey Stella](https://www.slideshare.net/Hadoop_Summit/just-the-sketch-advanced-streaming-analytics-in-apache-metron)
 
