@@ -54,7 +54,7 @@ Now we will build a mysquid sensor from scratch using a grok parser.
 Don't worry if you see the "No Matching Kafka Topic", the Kafka Topic will be created automatically on save.  
 <img src="images/mysquid_create_sensor.png" width="35%" height="35%" title="Create My Squid Sensor">
 
-5. Click to expand the Grok Statement.  Paste the sample squid raw log entry below into the Sample field. 
+4. Click to expand the Grok Statement.  Paste the sample squid raw log entry below into the Sample field. 
 
 ```
 1528766038.123  70328 75.133.181.135 TCP_TUNNEL/200 420 CONNECT data.cnn.com:443 - HIER_DIRECT/2.20.22.7 -
@@ -62,27 +62,27 @@ Don't worry if you see the "No Matching Kafka Topic", the Kafka Topic will be cr
 
 ![My Squid With Sample](images/mysquid_grok_sample.png)
 
-4. Copy and paste the grok expression below to the right of the MYSQUID grok expression name:
+5. Copy and paste the grok expression below to the right of the MYSQUID grok expression name:
 
 ```
 %{NUMBER:timestamp}[^0-9]*%{INT:elapsed} %{IP:ip_src_addr} %{WORD:action}/%{NUMBER:code} %{NUMBER:bytes} %{WORD:method} %{NOTSPACE:url}[^0-9]*(%{IP:ip_dst_addr})?
 ```
 
-5. Press the Test button. The Preview section will update with the fields parsed from the raw log.  If there is an error and the preview does not appear, verify the sample and grok expression field values.   Adjust the sample or grok expression field values so the preview appears.
+6. Press the Test button. The Preview section will update with the fields parsed from the raw log.  If there is an error and the preview does not appear, verify the sample and grok expression field values.   Adjust the sample or grok expression field values so the preview appears.
 
 ![My Squid Sensor](images/mysquid_grok.png)
 
-6. Click Save.
-7. Verify that sensor name and topic name are "mysquid" with NO extra spaces or special characters.  
-7. Click Save on the mysquid sensor.
-7. The mysquid sensor appears in the management UI.  Click on the pencil icon to edit the mysquid sensor.  The mysquid configuration opens.
-9. Scroll down to the Parser Config section.   
-10.  In the enter field point, enter timestampField.
-11. In enter value, enter timestamp.
+7. Click Save.
+8. Verify that sensor name and topic name are "mysquid" with NO extra spaces or special characters.  
+9. Click Save on the mysquid sensor.
+10. The mysquid sensor appears in the management UI.  Click on the pencil icon to edit the mysquid sensor.  The mysquid configuration opens.
+11. Scroll down to the Parser Config section.   
+12.  In the enter field point, enter timestampField.
+13. In enter value, enter timestamp.
 
 <img src="images/timestamp_parser_config.png" width="30%" height="30%" title="Setting the timestamp field">
 
-13. Click the Save button.
+14. Click the Save button.
 ## Installing the mysquid index template
 After events are enriched and triaged, metron stores the events in an index.  The index template specifies how to interpret the metron events and how to index strings using either a keyword or full text search.  
 
@@ -99,22 +99,22 @@ ssh -i <pem file> centos@mobius.local
 ```
 ./create_solr_colection.sh mysquid
 ``` 
-4. To see the definition of the schema use the more command on the metron host.  Press enter to advance one line.  Press space to advance one page.  To exit the more command enter 'q':
+3. To see the definition of the schema use the more command on the metron host.  Press enter to advance one line.  Press space to advance one page.  To exit the more command enter 'q':
 
 ```
 more /usr/hcp/current/metron/config/schema/mysquid/schema.xml
 ``` 
 
-5. The solrconfig.xml file defines the configuration of the index.  The solr config does not vary by the index content.  When creating a new index, use the metron solrconfig.xml as is.
+4. The solrconfig.xml file defines the configuration of the index.  The solr config does not vary by the index content.  When creating a new index, use the metron solrconfig.xml as is.
 
 ```
 more /usr/hcp/current/metron/config/schema/mysquid/solrconfig.xml
 ``` 
 
-3. In the browser, open solr collections interface to see the mysquid collection:
+5. In the browser, open solr collections interface to see the mysquid collection:
 http://mobius.local.localdomain:8983/solr/#/~collections
  
-<img src="images/solr_collections.png" width="30%" height="30%" title="Viewing collections in solr">
+<img src="images/solr_collections.png" width="70%" height="70%" title="Viewing collections in solr">
 
 
 ### Creating an index in Elastic Search
@@ -351,6 +351,6 @@ PUT _template/mysquid
 
 ## References
 
-[Metron Run Book](https://docs.hortonworks.com/HDPDocuments/HCP1/HCP-1.5.0/bk_runbook/bk_runbook.pdf)
+[Metron Run Book](https://docs.hortonworks.com/HDPDocuments/HCP1/HCP-1.6.1/runbook/cybersecurity-runbook.pdf)
 
 [Metron Source Code](https://github.com/apache/metron)

@@ -48,7 +48,7 @@ For Windows 10 and 8:
  ![Metron Login Screen](images/metron_login.png)
  8. The Metron Alerts UI opens listing the events reported to Metron.  From the alerts UI you can search, filter and view the details of alerts. 
    ![Metron Alerts Screen](images/metron_alerts.png)
-9. Consult the [Viewing Alerts User Guide](https://docs.hortonworks.com/HDPDocuments/HCP1/HCP-1.5.0/bk_user-guide/content/displaying_alerts.html) for more information on how to use the Alerts UI.
+9. Consult the [Viewing Alerts User Guide](https://docs.hortonworks.com/HDPDocuments/HCP1/HCP-1.6.1/user-guide/content/viewing_alerts.html) for more information on how to use the Alerts UI.
 ## Opening the Ambari UI
  1. Open Ambari to view the status of the Metron infrastructure and start, stop, and restart services.  Ambari also configures, installs and upgrades Metron software.
  2. Open your browser to http://mobius.local:8080/.

@@ -37,7 +37,7 @@ Field transformations add new fields to the event that are derived from existing
 
 ![Edit mysquid sensor](images/edit_mysquid.png)
 
-3. Metron configuration files are in json format.   Simple transformations can be added in the Configuration UI but our example requires more complex transformations.   Transformations are written in a platform specific language called [Stellar](https://docs.hortonworks.com/HDPDocuments/HCP1/HCP-1.5.0/bk_stellar-quick-ref/bk_stellar-quick-ref.pdf).
+3. Metron configuration files are in json format.   Simple transformations can be added in the Configuration UI but our example requires more complex transformations.   Transformations are written in a platform specific language called [Stellar](https://docs.hortonworks.com/HDPDocuments/HCP1/HCP-1.6.1/stellar-quick-ref/content/introduction_to_stellar_language.html).
 
 Click the >> icon to the right of Raw Json in the Advanced section. 
 
@@ -83,5 +83,5 @@ with the following text:
 
 ## References
 
-[Stellar Quick Reference](https://docs.hortonworks.com/HDPDocuments/HCP1/HCP-1.5.0/bk_stellar-quick-ref/bk_stellar-quick-ref.pdf)
+[Stellar Quick Reference](https://docs.hortonworks.com/HDPDocuments/HCP1/HCP-1.6.1/stellar-quick-ref/content/introduction_to_stellar_language.html)
 
