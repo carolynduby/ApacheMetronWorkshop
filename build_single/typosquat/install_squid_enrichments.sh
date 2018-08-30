@@ -45,4 +45,10 @@ sudo mkdir /usr/hcp/current/metron/config/schema/squid
 sudo cp ../../02_ParsingSquid/solr/* /usr/hcp/current/metron/config/schema/squid
 sudo -E su $SOLR_USER -c "$METRON_HOME/bin/create_collection.sh squid"
 
+# put the mysquid templates in place but don't create the collection yet.  this will be done in the labs
+sudo cp -r /usr/hcp/current/metron/config/schema/squid /usr/hcp/current/metron/config/schema/mysquid
+sudo sed  -i 's/squid_doc/mysquid_doc/' /usr/hcp/current/metron/config/schema/mysquid/schema.xml 
+
 sudo -E su hdfs -c "$METRON_HOME/bin/geo_enrichment_load.sh -z localhost:2181"
+
+cp create_solr_collection.sh /home/centos 
