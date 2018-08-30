@@ -114,5 +114,8 @@ Once a potential typosquatted domain is identified, investigated and found to be
 
 <img src="images/metron_no_cnn_alert.png" width="95%" height="95%" title="CNN no typosquat">
 
+## Next Lab
+[Profiler basics.](../05_ProfilerBasics/README.md)
+
 ## References
 [Metron typosquat detection use case](https://metron.apache.org/current-book/use-cases/typosquat_detection/index.html)

@@ -4,7 +4,7 @@ This section will describe how to create your very first “Hello, World” prof
 
 Creating and refining profiles is an iterative process. Iterating against a live stream of data is slow, difficult and error prone. The Profile Debugger was created to provide a controlled and isolated execution environment to create, refine and troubleshoot profiles.
 
-Metron leverages the Stellar DSL for enhanced productivity. (Stellar Reference Guide)[https://metron.apache.org/current-book/metron-stellar/stellar-common/index.html]
+Metron leverages the Stellar DSL for enhanced productivity. [Stellar Reference Guide](https://metron.apache.org/current-book/metron-stellar/stellar-common/index.html)
 
 ## Launch the Stellar Shell. We will leverage the Profiler Debugger from within the Stellar Shell.
 
@@ -143,6 +143,8 @@ $ cd $METRON_HOME
 $ bin/zk_load_configs.sh -m PUSH -i config/zookeeper/ -z localhost:2181
 ```
 
-
+# References
+[Profile examples](https://docs.hortonworks.com/HDPDocuments/HCP1/HCP-1.6.1/analytics/content/profile_examples.html)
+[Accessing profiles](https://docs.hortonworks.com/HDPDocuments/HCP1/HCP-1.6.1/analytics/content/accessing_profiles.html)
 
 
