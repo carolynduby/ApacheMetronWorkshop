@@ -52,3 +52,8 @@ sudo sed  -i 's/squid_doc/mysquid_doc/' /usr/hcp/current/metron/config/schema/my
 sudo -E su hdfs -c "$METRON_HOME/bin/geo_enrichment_load.sh -z localhost:2181"
 
 cp create_solr_collection.sh /home/centos 
+
+cp ../../04_TriagingSquid/scripts/* /home/centos
+
+cd /home/centos
+./import_domain_whitelist.sh 
