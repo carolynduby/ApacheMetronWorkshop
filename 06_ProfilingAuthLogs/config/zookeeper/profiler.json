@@ -1,0 +1,44 @@
+{
+  "profiles" : [ {
+      "profile": "distinct_auth_attempts_by_user",
+      "foreach": "user",
+      "onlyif": "source.type == 'auth' && auth_orientation != null && auth_orientation == 'LogOn' && user != null && LENGTH(user) > 0 && ip_dst_host != null && ip_dst_host != '?'",
+      "init": {
+        "total": "HLLP_INIT(5,6)"
+      },
+      "update": {
+        "total": "HLLP_ADD(total, ip_dst_host)"
+      },
+      "result": {
+        "profile": "total",
+        "triage": {
+          "total_count": "HLLP_CARDINALITY(total)"
+        }
+      }
+    },
+    {
+      "profile": "distinct_auth_attempts_by_user_distribution",
+      "foreach": "'global'",
+      "onlyif": "source.type == 'profiler' && profile == 'distinct_auth_attempts_by_user'",
+      "init": {
+        "s": "STATS_INIT()"
+      },
+      "update": {
+        "s": "STATS_ADD(s, total_count)"
+      },
+      "result": "s"
+    },
+    {
+      "profile": "num_alerts_by_user",
+      "foreach": "user",
+      "onlyif": "source.type == 'auth' && is_alert != null && (is_alert == true || is_alert == 'true')",
+      "init": {
+        "count": "0"
+      },
+      "update": {
+        "count": "count + 1"
+      },
+      "result": "count"
+  }
+]
+}

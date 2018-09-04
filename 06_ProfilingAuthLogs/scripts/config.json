@@ -1,0 +1,23 @@
+{
+  "stepTimeMs" : 5000,
+  "timeOffset" : 1493837313104,
+  "sources" : [
+    {
+    "inputFile" : "auth.txt",
+    "outputTopic" : "auth",
+    "filter" : "source_user == 'U66@DOM1' || (ip_src_host not in [ null, 'TGT', '?'] && (not(exists(hostname_filter)) || ip_src_host in hostname_filter) ) || (ip_dst_host not in [ null, 'TGT', '?' ] && (not(exists(hostname_filter)) || ip_dst_host in hostname_filter))",
+    "config" : {
+     	"columns" : [ "timestamp"
+                    , "source_user"
+                    , "dest_user"
+                    , "ip_src_host"
+                    , "ip_dst_host"
+                    , "auth_type"
+                    , "logon_type"
+                    , "auth_orientation"
+                    , "success"
+                    ]
+               }
+    }
+  ]
+}
