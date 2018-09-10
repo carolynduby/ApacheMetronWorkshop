@@ -36,11 +36,11 @@ http://mobius.local:8080/
 
 5. Enter the Zeppelin credentials (admin/admin).  Click Login. 
 
-<img src="images/03_zeppelin_login.png" width="75%" height="75%" title="Zeppelin Login">
+<img src="images/03_zeppelin_login.png" width="50%" height="50%" title="Zeppelin Login">
 
 6. The Welcome to Zeppelin page opens.  Click on the Auth Investigation notebook link.
 
-<img src="images/04_zeppelin_select_notebook.png" width="75%" height="75%" title="Zeppelin Select Notebook">
+<img src="images/04_zeppelin_select_notebook.png" width="50%" height="50%" title="Zeppelin Select Notebook">
 
 7. The Auth Investigation notebook is an example of a run book to assist a SOC analyst when investigating an authentication alert.   A notebook consists of a set of paragraphs.   Each paragraph starts with a % followed by an interpreter name.   For example the first paragraph uses the shell interpreter.  The second paragraph uses the spark2 interpreter.  The third paragraph uses the spark2.sql interpreter.  Following the interpreter is some commands or code in the language required by the interpreter.  
 
@@ -70,7 +70,7 @@ In the spark2.sql "Which users log into many distinct hosts?" paragraph, Zeppeli
 
 To change the visualization, click on the tool bar below the user text entry field.
 
-<img src="images/12_show_graph_sql.png" width="75%" height="75%" title="Show graph sql">
+<img src="images/12_show_graph_sql.png" width="50%" height="50%" title="Show graph sql">
 
 13. Scroll through the visualizations in the rest of the notebook.  Go to the bottom of the notebook.  You will see an empty new paragraph.  
 
@@ -104,10 +104,13 @@ Many business intelligence tools include connectors to Solr, Elastic Search and 
 
 ## Tutorials
 [Spark Dataframe and DataSet Tutorial](https://hortonworks.com/tutorial/dataframe-and-dataset-examples-in-spark-repl/)
+
 [Getting started with Apache Zeppelin Tutorial](https://hortonworks.com/tutorial/getting-started-with-apache-zeppelin/)
+
 [Intro to Machine Learning with Apache Spark and Apache Zeppelin Tutorial](https://hortonworks.com/tutorial/intro-to-machine-learning-with-apache-spark-and-apache-zeppelin/)
 
 ## Documentation
 [Apache Spark Component Guide](https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.6.5/bk_spark-component-guide/content/ch_introduction-spark.html)
+
 [Apache Zeppelin Component Guide](https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.6.5/bk_zeppelin-component-guide/content/ch_overview.html)
 
