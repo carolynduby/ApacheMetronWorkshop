@@ -1,4 +1,4 @@
-# User and Entity Behavior Analytics(UEBA) with User Authentication Event
+# User and Entity Behavior Analytics(UEBA) with User Authentication Events
 ## Objectives
 After this lab you will be able to:
 1. Describe the components of a Metron profile.
@@ -32,11 +32,11 @@ Score, Timestamp, source.type, distinct auth_attempts, distinct_auth_attempts_me
 
 4. Click Save.
 
-5. The Alerts UI now shows the measurements derived from the profiles that determine if a user is logging into more hosts than other peer users. 
+5. The Alerts UI now shows the measurements derived from the profiles that determine if a user is logging into more distinct hosts than other peer users. 
 
 <img src="images/03_show_auth_measurements.png" width="95%" height="95%" title="Enrichments Before" >
 
-6. Click on the arrows to the right of the score to sort ascending by score.   Then click again to sort descending by score.  You should see red alerts scored 100 at the top.  Click in the whitespace between the columns to bring up the alert details.
+6. Click on the arrows to the right of the score to sort ascending by score.   Click again to sort descending by score.  You should see red alerts scored 100 at the top.  Click in the whitespace between the columns to bring up the alert details.
 
 <img src="images/04_auth_high_score_alert_details.png" width="95%" height="95%" title="Enrichments Before" >
 
