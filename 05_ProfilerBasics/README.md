@@ -142,6 +142,8 @@ Push the updated profiler configuration
 $ cd $METRON_HOME
 $ bin/zk_load_configs.sh -m PUSH -i config/zookeeper/ -z localhost:2181
 ```
+## Next Lab
+[User and Entity Behavior Analytics(UEBA) with User Authentication Events](06_ProfilingAuthLogs/README.md)
 
 # References
 

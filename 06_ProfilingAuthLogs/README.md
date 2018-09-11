@@ -102,6 +102,9 @@ For the auth example, we define three profiles:
 
 11. You can define similar patterns to detect other types of anomalies with user logins or other entities. 
 
+# Next Lab
+[Exploring Event History - Dashboards and Run Books for Analysis, Threat Hunting and Investigations](07_ExploringEventHistory/README.md)
+
 # References 
 [Metron Statistics Stellar Functions](https://metron.apache.org/current-book/metron-analytics/metron-statistics/index.html)
 
