@@ -97,7 +97,7 @@ ssh -i <pem file> centos@mobius.local
 2. Run the create_solr_collection command to create a new collection and install the collection schema.  The schema defines the types and search capabilities of each field in the events stored in the index.  
 
 ```
-./create_solr_colection.sh mysquid
+./create_solr_collection.sh mysquid
 ``` 
 3. To see the definition of the schema use the more command on the metron host.  Press enter to advance one line.  Press space to advance one page.  To exit the more command enter 'q':
 
