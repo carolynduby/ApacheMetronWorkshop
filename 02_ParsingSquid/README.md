@@ -86,9 +86,11 @@ Don't worry if you see the "No Matching Kafka Topic", the Kafka Topic will be cr
 ## Installing the mysquid index template
 After events are enriched and triaged, metron stores the events in an index.  The index template specifies how to interpret the metron events and how to index strings using either a keyword or full text search.  
 
-Determine the index you are using (Solr or Elastic Search) and follow the instrutions in the corresponding section below.
+Determine the index you are using (Solr or Elastic Search - ask your instructor if you are not sure) and follow the instrutions in the corresponding section below.
 
 ### Creating a Collection in Solr
+SKIP this section if you are using Elastic Search.
+
 1. SSH into the metron host.   If you are logging in from windows, ssh using putty.
 
 ```
@@ -118,6 +120,9 @@ http://mobius.local:8983/solr/#/~collections
 
 
 ### Creating an index in Elastic Search
+
+SKIP this section if you using Solr.
+
 1. Enter the Kibana url in the browser:
 http://mobius.local:5000
 2. Select Dev Tools from the left hand side of the kibana page.  The Dev Tools console is an easy way to interact with the index REST api.  If the Welcome window appears, click the Get to work button.
