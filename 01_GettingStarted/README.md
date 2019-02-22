@@ -35,7 +35,7 @@ For Windows 10 and 8:
 ## Opening the Metron Management UI
 
  1. The management UI shows the sensors configured in Metron and their operational state (running/stopped and latency).  From the management UI you can create new sensors, view sensor configuration, browse raw logs sent by the sensor, and change the configuration of sensors.
- 2. Open your browser to http://mobius.local:4200/ where *metron_host_name* is the name of the host provided to you in the workshop materials.
+ 2. Open your browser to http://mobius.local:4200/ .
  3. When prompted for the password enter metron for the user and metron for the password.  
  ![Metron Login Screen](images/metron_login.png)
  4. The Metron Management UI opens showing the sensors configured in Metron and their operational state (running/stopped and latency).
