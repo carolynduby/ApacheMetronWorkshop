@@ -112,7 +112,7 @@ more /usr/hcp/current/metron/config/schema/mysquid/solrconfig.xml
 ``` 
 
 5. In the browser, open solr collections interface to see the mysquid collection:
-http://mobius.local.localdomain:8983/solr/#/~collections
+http://mobius.local:8983/solr/#/~collections
  
 <img src="images/solr_collections.png" width="70%" height="70%" title="Viewing collections in solr">
 
