@@ -8,7 +8,7 @@ The Metron profiler collects time series measurements using high throughput algo
 
 For example, the chart below shows the user C553's profile measurements.   The light blue line is the upper bound of the typical behavior.  The dark blue line is the user's behavior.   The orange line is the score of the events.   User C553 demonstrates typical behavior because the user's behavior (dark blue) is below the maximum upper bound (light blue).  
 
-<img src="images/typical_user.png" width="50%" height="50%" title="Typical User" >
+<img src="images/typical_user.png" width="75%" height="75%" title="Typical User" >
 
 User C1114 demonstrates intermittent anomalous behavior.  When the user's behavior (dark blue) intermittently goes above the maximum typical behavior (light blue) a scored alert is reported.  The orange spikes show the scored alerts.     
 
