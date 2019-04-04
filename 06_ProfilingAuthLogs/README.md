@@ -12,11 +12,11 @@ For example, the chart below shows the user C553's profile measurements.   The l
 
 User C1114 demonstrates intermittent anomalous behavior.  When the user's behavior (dark blue) intermittently goes above the maximum typical behavior (light blue) a scored alert is reported.  The orange spikes show the scored alerts.     
 
-<img src="images/intermittent_anomaly.png" width="50%" height="50%" title="Intermittent Anomaly" >
+<img src="images/intermittent_anomaly.png" width="75%" height="75%" title="Intermittent Anomaly" >
  
 User U66 demonstrates consistent anomalous behavior because the user's behavior (dark blue) is consistently above the maximum typical behavior (light blue).  Almost every event is above typical behavior.   
 
-<img src="images/continuous_anomaly.png" width="50%" height="50%" title="Intermittent Anomaly" >
+<img src="images/continuous_anomaly.png" width="75%" height="75%" title="Intermittent Anomaly" >
 
 In this lab we walk through the auth profiles, the measurements captured by those profiles, and the alerts triggered by the profile triage rules.    
 
