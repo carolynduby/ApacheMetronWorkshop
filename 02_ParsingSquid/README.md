@@ -83,6 +83,43 @@ Don't worry if you see the "No Matching Kafka Topic", the Kafka Topic will be cr
 <img src="images/timestamp_parser_config.png" width="30%" height="30%" title="Setting the timestamp field">
 
 14. Click the Save button.
+15. Add a field that stores the timestamp in an ISO format.  The ISO format is helpful when creating timeseries dashboards and notebooks.  Click on the pencil icon to edit the mysquid sensor.  The mysquid configuration opens.
+16. Scroll to the Advanced section and click on the Raw Json expand button.
+
+<img src="images/solr_timestamp_01.png" width="50%" height="50%" title="Advanced json">
+
+17. In the Sensor Parser Config section, 
+
+Replace the fieldTransformations with the following:
+
+```
+"fieldTransformations": [],
+```
+
+<img src="images/solr_timestamp_02.png" width="50%" height="50%" title="Before">
+
+with the following:
+
+```
+"fieldTransformations": [
+		{
+			"input": [],
+			"output": [
+				"timestamp_solr"
+			],
+			"transformation": "STELLAR",
+			"config": {
+				"timestamp_solr": "DATE_FORMAT('yyyy-MM-dd\\'T\\'HH:mm:ss\\'Z\\'',timestamp)"
+			}
+		}
+	], 
+```
+
+<img src="images/solr_timestamp_03.png" width="50%" height="50%" title="Before">
+
+18. Scroll down and click the Save button under the Advanced section.
+19. Click Save at the bottom of the sensor dialog.
+
 ## Installing the mysquid index template
 After events are enriched and triaged, metron stores the events in an index.  The index template specifies how to interpret the metron events and how to index strings using either a keyword or full text search.  
 
