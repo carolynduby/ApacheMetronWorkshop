@@ -86,7 +86,7 @@ Don't worry if you see the "No Matching Kafka Topic", the Kafka Topic will be cr
 15. Add a field that stores the timestamp in an ISO format.  The ISO format is helpful when creating timeseries dashboards and notebooks.  Click on the pencil icon to edit the mysquid sensor.  The mysquid configuration opens.
 16. Scroll to the Advanced section and click on the Raw Json expand button.
 
-<img src="images/solr_timestamp_01.png" width="50%" height="50%" title="Advanced json">
+<img src="images/solr_timestamp_01.png" width="30%" height="30%" title="Advanced json">
 
 17. In the Sensor Parser Config section, 
 
