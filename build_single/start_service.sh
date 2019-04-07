@@ -46,3 +46,11 @@ elif [ "${status}" == "COMPLETED" ]; then
 else
    echo "Operation did not succeed. Status was ${status}" >> ${log}
 fi
+
+if [ -e "/usr/hdp/current/knox-server/bin/gateway.sh" ]; then
+  echo "starting Knox..." >> /var/log/hdp_startup.log
+  mkdir /var/run/knox
+  chown knox:hadoop /var/run/knox
+  sudo -u knox /usr/hdp/current/knox-server/bin/gateway.sh start
+  sudo -u knox /usr/hdp/current/knox-server/bin/ldap.sh start
+fi
