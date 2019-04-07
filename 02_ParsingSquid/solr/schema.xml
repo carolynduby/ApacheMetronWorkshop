@@ -31,7 +31,9 @@
          * Metron-specific fields
   -->
   <field name="source.type" type="string" indexed="true" stored="true" />
+  <field name="alert_status" type="string" indexed="true" stored="true" />
   <field name="timestamp" type="timestamp" indexed="true" stored="true" />
+  <field name="timestamp_solr" type="iso_timestamp" indexed="true" stored="true" />
   <field name="guid" type="string" indexed="true" stored="true" required="true" multiValued="false" />
   <uniqueKey>guid</uniqueKey>
 
@@ -97,5 +99,6 @@
   <fieldType name="location" class="solr.LatLonType" subFieldSuffix="_coordinate"/>
   <fieldType name="ip" stored="true" indexed="true" multiValued="false" class="solr.StrField" sortMissingLast="true" docValues="false"/>
   <fieldType name="timestamp" stored="true" indexed="true" multiValued="false" class="solr.TrieLongField" sortMissingLast="false" docValues="true"/>
+  <fieldType name="iso_timestamp" stored="true" indexed="true" multiValued="false" class="solr.TrieDateField" sortMissingLast="false" docValues="true"/>
   <fieldType name="ignored" stored="true" indexed="true" multiValued="true" class="solr.StrField" sortMissingLast="false" docValues="false"/>
 </schema>
