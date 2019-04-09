@@ -69,7 +69,7 @@ with the following text:
 	],
 ```
 
-![transformation config after](images/transformations_config_after.png)
+<img src="images/transformations_config_after.png" width="75%" height="75%" title="Transformations Config After">
 
 5. Click Save under the raw json editors. 
 6. Click Save on the lower left of the Sensor configuration file.
