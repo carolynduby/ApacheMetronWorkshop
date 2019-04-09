@@ -56,12 +56,14 @@ with the following text:
 			"input": [],
 			"output": [
 				"full_hostname",
-				"domain_without_subdomains"
+				"domain_without_subdomains",
+				"timestamp_solr"
 			],
 			"transformation": "STELLAR",
 			"config": {
 				"full_hostname": "IF (IS_URL(url)) THEN URL_TO_HOST(url) ELSE GET_FIRST(SPLIT(url, ':'))",
-				"domain_without_subdomains": "DOMAIN_REMOVE_SUBDOMAINS(full_hostname)"
+				"domain_without_subdomains": "DOMAIN_REMOVE_SUBDOMAINS(full_hostname)",
+				"timestamp_solr": "DATE_FORMAT('yyyy-MM-dd\\'T\\'HH:mm:ss\\'Z\\'',timestamp)"
 			}
 		}
 	],
