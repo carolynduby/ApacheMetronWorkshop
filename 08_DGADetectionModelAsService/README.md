@@ -151,4 +151,5 @@ Alerts with is_malicious equal to dga and is_potential_typosquat equal to true h
 
 ## References 
 [Domain Generation Algorithm](https://en.wikipedia.org/wiki/Domain_generation_algorithm)
+
 [Model as Service: Modern Streaming Data Science with Apache Metron](https://hortonworks.com/blog/model-service-modern-streaming-data-science-apache-metron/)
