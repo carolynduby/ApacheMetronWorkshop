@@ -7,21 +7,21 @@ Machine learning models are algorithms that return a prediction or classificatio
 
 1. Implement a rest service that follows the Metron Model as a Service interface API conventions. 
 2. Register the model with Metron Model as a Service.
-3. Add an enrichment that sends the event fields to the model and includes the results in a new field.
+3. Add an enrichment equal to the model result given a set of input fields from the event.  
 4. Use the model results in triaging.
 
-This lab uses an example from [Brian Wylie's](https://www.linkedin.com/in/briford/) BSides DFW 2013 conference presentation [Data Hacking Mad Scientist Style](http://www.securitybsides.com/w/page/68749447/BSidesDFW%202013%20Full%20Track%202%20Abstracts).  The [DGA detection model](https://github.com/SuperCowPowers/data_hacking/tree/master/dga_detection) accepts a top level domain name and returns a legitimate or dga classification of the domain.  To learn more about the model training model was developed, check out the (notebook)[https://nbviewer.jupyter.org/github/SuperCowPowers/data_hacking/blob/master/dga_detection/DGA_Domain_Detection.ipynb]. 
+This lab uses an example from [Brian Wylie's](https://www.linkedin.com/in/briford/) BSides DFW 2013 conference presentation [Data Hacking Mad Scientist Style](http://www.securitybsides.com/w/page/68749447/BSidesDFW%202013%20Full%20Track%202%20Abstracts).  The [DGA detection model](https://github.com/SuperCowPowers/data_hacking/tree/master/dga_detection) accepts a top level domain name and returns a legitimate or dga classification of the domain.  To learn more about the model training model was developed, check out the [notebook](https://nbviewer.jupyter.org/github/SuperCowPowers/data_hacking/blob/master/dga_detection/DGA_Domain_Detection.ipynb). 
 
 ## Creating a Model Rest Service
 The [model python implementation](https://github.com/carolynduby/ApacheMetronWorkshop/tree/master/08_DGADetectionModelAsService/dga_model) consists of two main components: [model.py](https://github.com/carolynduby/ApacheMetronWorkshop/blob/master/08_DGADetectionModelAsService/dga_model/model.py) and [rest.py](https://github.com/carolynduby/ApacheMetronWorkshop/blob/master/08_DGADetectionModelAsService/dga_model/rest.py).  
 
-The __init__ function in model.py loads the model definitions, a machine learning model algorithm type and its mathematical parameters.  The evalute_domain function accepts a domain name, passes the domain into the model, and returns a legit or dga classifcation returned by the model.   
+The __init__ function in model.py (line 7) loads the model definitions, a machine learning model algorithm type and its mathematical parameters.  The __evalute_domain__ function (line 14) accepts a domain name, passes the domain name into the model, and returns a legit or dga classifcation returned by the model.   
 
 <img src="images/model_python.png" width="75%" height="75%" title="Model Python Code">
 
-The rest module uses the python Flask library to start a REST service endpoint.  The rest service calls the model evaluate_domain method and returns the DGA classification in JSON format.
+The rest module uses the python Flask library to start a REST service endpoint.  The rest service calls the model evaluate_domain method (line 14) and returns the is_malicious DGA classification in JSON format (line 17).
 
-<img src="images/rest_python.png" width="75%" height="75%" title="Model Python Code">
+<img src="images/rest_python.png" width="50%" height="50%" title="Model Python Code">
 
 ## Deploying DGA Detection Model for use with Metron
 1. Ssh into the mobius.local.localdomain host as the centos user using the .pem key file provided.
@@ -76,7 +76,7 @@ MAAS_GET_ENDPOINT(  MAAS_MODEL_APPLY(
 
 “is_malicious := MAP_GET('is_malicious', MAAS_MODEL_APPLY(MAAS_GET_ENDPOINT('dga'), {'host' : domain_without_subdomains}))”
 
-<img src="images/add_is_malicious.png" width="75%" height="75%" title="Add is_malicious enrichment">
+<img src="images/add_is_malicious.png" width="60%" height="60%" title="Add is_malicious enrichment">
 
 8. Click Save below the json.
 
@@ -136,11 +136,11 @@ MAAS_GET_ENDPOINT(  MAAS_MODEL_APPLY(
 
 For alerts with is_malicious equal to dga and is_potential_typosquat equal to false, the alert will only have one score from the dga detection:
 
-<img src="images/one_score.png" width="75%" height="75%" title="DGA Alerts Score">
+<img src="images/one_score.png" width="35%" height="35%" title="DGA Alerts Score">
 
 Alerts with is_malicious equal to dga and is_potential_typosquat equal to true have two scores - one score from the typosquat and a second score from dga detection.  The overall score is the maximum of the two scores because the aggregator is set to MAX:
 
-<img src="images/both_scores.png" width="75%" height="75%" title="DGA and Typosquat Alert Scores">
+<img src="images/both_scores.png" width="35%" height="35%" title="DGA and Typosquat Alert Scores">
 
 16.  Excellent work!  You applied an off the shelf machine learning model classification to squid events and used the classification in scoring. 
 
