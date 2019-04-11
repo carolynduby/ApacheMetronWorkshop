@@ -130,7 +130,7 @@ MAAS_GET_ENDPOINT(  MAAS_MODEL_APPLY(
 
 14. Click Save under the sensor configuration.
 
-15. Configure your browser to use the proxy on the mobius.local.localdomain host port 3128.  Browse to gigya.com and other sites such as a news site.  Eventually you should see some alerts with a red score of 75.  Enter is_malicious:dga in the search field and click the search button.  The UI displays only dga alerts.
+15. Configure your browser to use the proxy on the mobiu.local.localdomain host port 3128.  Browse to gigya.com and other sites such as a news site.  Eventually you should see some alerts with a red score of 75.  Enter is_malicious:dga in the search field and click the search button.  The UI displays only dga alerts.
 
 <img src="images/dga_events.png" width="75%" height="75%" title="Metron UI with DGA Alerts">
 
@@ -143,6 +143,11 @@ Alerts with is_malicious equal to dga and is_potential_typosquat equal to true h
 <img src="images/both_scores.png" width="35%" height="35%" title="DGA and Typosquat Alert Scores">
 
 16.  Excellent work!  You applied an off the shelf machine learning model classification to squid events and used the classification in scoring. 
+
+# Next Lab
+
+[Exploring Event History - Dashboards and Run Books for Analysis, Threat Hunting and Investigations](../07_ExploringEventHistory/README.md)
+
 
 ## References 
 [Domain Generation Algorithm](https://en.wikipedia.org/wiki/Domain_generation_algorithm)

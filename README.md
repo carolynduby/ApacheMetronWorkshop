@@ -11,6 +11,7 @@ After this workshop you will be able to:
 5. [Profiler Basics](05_ProfilerBasics/README.md)
 6. [User and Entity Behavior Analytics(UEBA) with User Authentication Events](06_ProfilingAuthLogs/README.md)
 7. [Exploring Event History - Dashboards and Run Books for Analysis, Threat Hunting and Investigations](07_ExploringEventHistory/README.md)
+8. [Applying DGA Detection Machine Learning Predictions to Squid logs](08_DGADetectionModelAsService/README.md)
 
 ## Required Metron Version 
 
