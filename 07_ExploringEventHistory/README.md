@@ -94,6 +94,91 @@ set zeppelin.spark.sql.stacktrace = true to see full stacktrace
 
 15. Notebooks automate many common analytics tasks.  Once the data is loaded into a Spark DataFrame, you can perform common queries for threat hunting or other explorations.  The data loaded into a dataframe can also be used for training machine learning models.
 
+## Creating a Solr Banana Dashboard
+
+Banana is another option for visualizing data stored in Solr indices.   
+
+1. In the browser, enter the Banana url:
+
+http://mobius.local.localdomain:8983/solr/banana
+
+2. The Basic Dashboard with Pointers appears. 
+
+<img src="images/banana_01.png" width="95%" height="95%" title="Banana 01">
+
+3. Click on the New icon in the upper right.  Select Time-series dashboard.
+
+<img src="images/banana_02.png" width="95%" height="95%" title="Banana 02">
+
+4. The New Dashboard Settings dialog appears.   Enter mysquid in the Collection Name.  Enter timestamp_solr in the Time Field.  Click Create.
+
+<img src="images/banana_03.png" width="95%" height="95%" title="Banana 03">
+
+5. The New Time Series Dashboard appears with default visualizations.  The dashboard consists of vertical rows.  Each row has one or more panels that display data.
+
+<img src="images/banana_04.png" width="95%" height="95%" title="Banana 04">
+
+6. Locate Total Hits in the upper right of the dashboard.   The total hits is zero.  Click on the gear icon in the Total Hits panel. 
+
+<img src="images/banana_05.png" width="95%" height="95%" title="Banana 05">
+
+7. The Hits Setting dialog opens.
+
+<img src="images/banana_06.png" width="95%" height="95%" title="Banana 06">
+
+8. Click on the Panel tab.  
+
+<img src="images/banana_06.png" width="95%" height="95%" title="Banana 06">
+
+9. Enter guid in the Field. Click Close.
+
+<img src="images/banana_07.png" width="95%" height="95%" title="Banana 07">
+
+10. The Total Hits will now display the number of mysquid events in the time period for the dashboard.
+
+11. The Time Window in the upper left controls the time period of the data displayed in the dashboard.  Time periods are relative to the current time by default.
+
+12. Click on the disk icon to save the dashboard.  Enter squid in the text entry field.  Click the disk icon to save. 
+
+13. To select the dashboard displayed, select the folder icon.  Click on the squid link at the bottom of the dialog. 
+
+14. Check Auto-refresh and the dashboard will read the latest data from the index and update the visualization. 
+
+15. Scroll to the bottom of the window and click + Add a row. 
+
+16. Enter Map in the Title and 300px in the Height.  Click Create Row.
+
+17. Click the up arrow for the Map row to move the Map row above the Table.  Map should now be the second to last row.   Click Close.
+
+18. An empty row now appears underneath the Event Counts histograms.   
+
+19. Click Add panel to emptry row.  
+
+20. Click the + to the right of Panels. 
+
+21. Select map for the Panel Type.  Enter Destinations in Title.   Select 6 for the Span.  The Span controls the width of the panel.  A panel extending across the full width of the row is Span 12.  Enter enrichments.geo.ip_dst_addr.country.  Click Add Panel.  
+
+22. Select sunburst for the Panel Type.  Enter Cities in the Title.  Select 6 for the Span.  Enter enrichments.geo.ip_dst_addr.country,enrichments.geo.ip_dst_addr.city in the Facet Pivot String. Click Add Panel. 
+
+23. Click Close.
+
+24. The dashboard now shows the location of the events on a map and in a sunburst.  The countries with more events have darker colors.  Hover over the country and the number of events destined to the country pops up. 
+
+25. Hover over the inner ring of the sunburst to see the breakdown of the number of events destined for each country.  The outer ring of the sunburst shows the breakdown of the events destined for each city.
+
+26. Go to the top right and click the save button.
+
+27. Add a new row called Bytes and move it above the Table.
+
+28. Scroll up to the new row.  Add a histgram panel.   Enter Bytes for the Title.  Enter 12 in the Span.  
+
+29. Scroll down to Chart Settings.  Check Lines and uncheck Bars.   Click Add Panel.
+
+30. A line graph of the bytes over time is now shown on the dashboard.  
+
+31.  Click Save to save the Dashboard.  
+   
+
 ## Using a Business Intelligence Tool  
 
 Many business intelligence tools include connectors to Solr, Elastic Search and Spark SQL.  For example, [ZoomData](https://www.zoomdata.com/) is convenient for creating visualizations and dashboards from Metron events with no programming.   
