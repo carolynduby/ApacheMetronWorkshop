@@ -15,7 +15,7 @@
  See the License for the specific language governing permissions and
  limitations under the License.
 -->
-<schema name="squid_doc" version="1.6">
+<schema name="auth_doc" version="1.6">
   <!--
     WARNING
 
@@ -31,6 +31,7 @@
          * Metron-specific fields
   -->
   <field name="source.type" type="string" indexed="true" stored="true" />
+  <field name="alert_status" type="string" indexed="true" stored="true" />
   <field name="timestamp" type="timestamp" indexed="true" stored="true" />
   <field name="timestamp_solr" type="iso_timestamp" indexed="true" stored="true" />
   <field name="guid" type="string" indexed="true" stored="true" required="true" multiValued="false" />
