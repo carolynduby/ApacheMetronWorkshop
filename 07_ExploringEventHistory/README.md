@@ -104,45 +104,51 @@ http://mobius.local.localdomain:8983/solr/banana
 
 2. The Basic Dashboard with Pointers appears. 
 
-<img src="images/banana_01.png" width="95%" height="95%" title="Banana 01">
-
 3. Click on the New icon in the upper right.  Select Time-series dashboard.
 
-<img src="images/banana_02.png" width="95%" height="95%" title="Banana 02">
+<img src="images/banana_01.png" width="75%" height="75%" title="Banana 01">
 
 4. The New Dashboard Settings dialog appears.   Enter mysquid in the Collection Name.  Enter timestamp_solr in the Time Field.  Click Create.
 
-<img src="images/banana_03.png" width="95%" height="95%" title="Banana 03">
+<img src="images/banana_02.png" width="80%" height="80%" title="Banana 02">
 
 5. The New Time Series Dashboard appears with default visualizations.  The dashboard consists of vertical rows.  Each row has one or more panels that display data.
 
-<img src="images/banana_04.png" width="95%" height="95%" title="Banana 04">
+<img src="images/banana_03.png" width="75%" height="75%" title="Banana 03">
 
 6. Locate Total Hits in the upper right of the dashboard.   The total hits is zero.  Click on the gear icon in the Total Hits panel. 
 
-<img src="images/banana_05.png" width="95%" height="95%" title="Banana 05">
+<img src="images/banana_04.png" width="80%" height="80%" title="Banana 04">
 
 7. The Hits Setting dialog opens.
 
-<img src="images/banana_06.png" width="95%" height="95%" title="Banana 06">
+<img src="images/banana_05.png" width="80%" height="80%" title="Banana 05">
 
 8. Click on the Panel tab.  
 
-<img src="images/banana_06.png" width="95%" height="95%" title="Banana 06">
-
 9. Enter guid in the Field. Click Close.
 
-<img src="images/banana_07.png" width="95%" height="95%" title="Banana 07">
+<img src="images/banana_06.png" width="95%" height="95%" title="Banana 06">
 
 10. The Total Hits will now display the number of mysquid events in the time period for the dashboard.
 
+<img src="images/banana_07.png" width="95%" height="95%" title="Banana 07">
+
 11. The Time Window in the upper left controls the time period of the data displayed in the dashboard.  Time periods are relative to the current time by default.
+
+<img src="images/banana_08.png" width="95%" height="95%" title="Banana 08">
 
 12. Click on the disk icon to save the dashboard.  Enter squid in the text entry field.  Click the disk icon to save. 
 
+<img src="images/banana_09.png" width="95%" height="95%" title="Banana 09">
+
 13. To select the dashboard displayed, select the folder icon.  Click on the squid link at the bottom of the dialog. 
 
+<img src="images/banana_10.png" width="95%" height="95%" title="Banana 10">
+
 14. Check Auto-refresh and the dashboard will read the latest data from the index and update the visualization. 
+
+<img src="images/banana_11.png" width="95%" height="95%" title="Banana 11">
 
 15. Scroll to the bottom of the window and click + Add a row. 
 
