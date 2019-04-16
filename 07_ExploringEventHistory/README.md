@@ -152,7 +152,7 @@ http://mobius.local.localdomain:8983/solr/banana
 
 15. Scroll to the bottom of the window and click + Add a row. 
 
-<img src="images/banana_11.png" width="95%" height="95%" title="Banana 11">
+<img src="images/banana_11.png" width="50%" height="50%" title="Banana 11">
 
 16. Enter Map in the Title and 300px in the Height.  Click Create Row.
 
@@ -188,7 +188,7 @@ http://mobius.local.localdomain:8983/solr/banana
 
 24. The dashboard now shows the location of the events on a map and in a sunburst.  The countries with more events have darker colors.  Hover over the country and the number of events destined to the country pops up. 
 
-<img src="images/banana_20.png" width="50%" height="50%" title="Banana 20">
+<img src="images/banana_20.png" width="80%" height="80%" title="Banana 20">
 
 <img src="images/banana_21.png" width="50%" height="50%" title="Banana 21">
 
@@ -198,11 +198,11 @@ http://mobius.local.localdomain:8983/solr/banana
 
 26. Go to the top right and click the save button.
 
-27. Add a new row called Bytes and move it above the Table.
+27. Add a new row called Bytes and move it above the Table. Click Close.
 
 <img src="images/banana_23.png" width="50%" height="50%" title="Banana 23">
 
-28. Scroll up to the new row.  Add a histgram panel.   Enter Bytes for the Title.  Enter 12 in the Span.  For Mode select values.  Enter Value Field bytes.
+28. Scroll the dashboard up and locate the new empty row.  Add a histgram panel.   Enter Bytes for the Title.  Enter 12 in the Span.  For Mode select values.  Enter Value Field bytes.
 
 <img src="images/banana_24.png" width="50%" height="50%" title="Banana 24">
 
