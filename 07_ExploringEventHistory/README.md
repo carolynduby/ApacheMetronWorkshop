@@ -112,7 +112,7 @@ http://mobius.local.localdomain:8983/solr/banana
 
 <img src="images/banana_02.png" width="60%" height="60%" title="Banana 02">
 
-5. The New Time Series Dashboard appears with default visualizations.  The dashboard consists of vertical rows.  Each row has one or more panels that display data.
+5. The New Time Series Dashboard appears with default visualizations.  The dashboard consists of horizontal rows.  Each row has one or more panels that display data.
 
 <img src="images/banana_03.png" width="75%" height="75%" title="Banana 03">
 
@@ -152,35 +152,67 @@ http://mobius.local.localdomain:8983/solr/banana
 
 15. Scroll to the bottom of the window and click + Add a row. 
 
+<img src="images/banana_11.png" width="95%" height="95%" title="Banana 11">
+
 16. Enter Map in the Title and 300px in the Height.  Click Create Row.
+
+<img src="images/banana_12.png" width="95%" height="95%" title="Banana 12">
 
 17. Click the up arrow for the Map row to move the Map row above the Table.  Map should now be the second to last row.   Click Close.
 
+<img src="images/banana_13.png" width="95%" height="95%" title="Banana 13">
+
+<img src="images/banana_14.png" width="95%" height="95%" title="Banana 14">
+
 18. An empty row now appears underneath the Event Counts histograms.   
+
+<img src="images/banana_15.png" width="50%" height="50%" title="Banana 15">
 
 19. Click Add panel to emptry row.  
 
 20. Click the + to the right of Panels. 
 
+<img src="images/banana_16.png" width="50%" height="50%" title="Banana 16">
+
 21. Select map for the Panel Type.  Enter Destinations in Title.   Select 6 for the Span.  The Span controls the width of the panel.  A panel extending across the full width of the row is Span 12.  Enter enrichments.geo.ip_dst_addr.country.  Click Add Panel.  
+
+<img src="images/banana_17.png" width="50%" height="50%" title="Banana 17">
 
 22. Select sunburst for the Panel Type.  Enter Cities in the Title.  Select 6 for the Span.  Enter enrichments.geo.ip_dst_addr.country,enrichments.geo.ip_dst_addr.city in the Facet Pivot String. Click Add Panel. 
 
+<img src="images/banana_18.png" width="50%" height="50%" title="Banana 18">
+
 23. Click Close.
+
+<img src="images/banana_19.png" width="50%" height="50%" title="Banana 19">
 
 24. The dashboard now shows the location of the events on a map and in a sunburst.  The countries with more events have darker colors.  Hover over the country and the number of events destined to the country pops up. 
 
+<img src="images/banana_20.png" width="50%" height="50%" title="Banana 20">
+
+<img src="images/banana_21.png" width="50%" height="50%" title="Banana 21">
+
 25. Hover over the inner ring of the sunburst to see the breakdown of the number of events destined for each country.  The outer ring of the sunburst shows the breakdown of the events destined for each city.
+
+<img src="images/banana_22.png" width="50%" height="50%" title="Banana 22">
 
 26. Go to the top right and click the save button.
 
 27. Add a new row called Bytes and move it above the Table.
 
-28. Scroll up to the new row.  Add a histgram panel.   Enter Bytes for the Title.  Enter 12 in the Span.  
+<img src="images/banana_23.png" width="50%" height="50%" title="Banana 23">
+
+28. Scroll up to the new row.  Add a histgram panel.   Enter Bytes for the Title.  Enter 12 in the Span.  For Mode select values.  Enter Value Field bytes.
+
+<img src="images/banana_24.png" width="50%" height="50%" title="Banana 24">
 
 29. Scroll down to Chart Settings.  Check Lines and uncheck Bars.   Click Add Panel.
 
+<img src="images/banana_25.png" width="50%" height="50%" title="Banana 25">
+
 30. A line graph of the bytes over time is now shown on the dashboard.  
+
+<img src="images/banana_26.png" width="50%" height="50%" title="Banana 26">
 
 31.  Click Save to save the Dashboard.  
    
