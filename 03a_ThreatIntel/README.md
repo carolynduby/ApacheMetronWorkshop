@@ -262,9 +262,9 @@ head malicious_domains.csv | awk -v todays_date=$today 'BEGIN {FS =","} {print t
 
 5. Open the Metron Alerts UI.  Enter is_alert:true in the search.  Click the search button.  There will be some alerts.
 
-<img src="images/malicious_domain_alerts.png" width="75%" height="75%" title="Malicious domain alerts">
+<img src="images/malicious_domain_alerts.png" width="95%" height="95%" title="Malicious domain alerts">
 
 6. Click on the alert. Scroll down to the bottom of the alert details.  The threat intel causing the alert is indicated by the threatintels.hbaseThreatIntel.full_hostname.malicious_domain field.
 
-<img src="images/malicious_domain_alert_detail.png" width="75%" height="75%" title="Malicious domain alert detail">
+<img src="images/malicious_domain_alert_detail.png" width="50%" height="50%" title="Malicious domain alert detail">
 
