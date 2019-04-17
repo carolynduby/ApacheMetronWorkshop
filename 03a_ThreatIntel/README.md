@@ -253,7 +253,7 @@ Functions are loading lazily in the background and will be unavailable until loa
 
 <img src="images/threat_intel_config_after.png" width="75%" height="75%" title="Threat intel config after">
 
-4. Generate some traffic that triggers the threat intelligence.
+4. Generate some traffic that triggers the malicious_domain threat intelligence.
 
 ```
 today=`date +'%s.000'`
@@ -267,4 +267,20 @@ head malicious_domains.csv | awk -v todays_date=$today 'BEGIN {FS =","} {print t
 6. Click on the alert. Scroll down to the bottom of the alert details.  The threat intel causing the alert is indicated by the threatintels.hbaseThreatIntel.full_hostname.malicious_domain field.
 
 <img src="images/malicious_domain_alert_detail.png" width="50%" height="50%" title="Malicious domain alert detail">
+
+7. Generate some traffic that triggers the malicious_ip threat intelligence. 
+
+```
+today=`date +'%s.000'`
+head malicious_ips.csv | awk -v todays_date=$today 'BEGIN {FS =","} {print todays_date"  66025 208.54.147.129 TCP_TUNNEL/200 7699 CONNECT my.example.com:443 - HIER_DIRECT/" $1 " -"}' | /usr/hdp/current/kafka-broker/bin/kafka-console-producer.sh --topic mysquid --broker-list localhost:6667
+```
+
+5. Click the search button with is_alert:true in the search field to refresh the events.  The new malicious ip alerts will appear. 
+
+<img src="images/malicious_ip_alerts.png" width="95%" height="95%" title="Malicious ip alerts">
+
+6. Click on the alert. Scroll down to the bottom of the alert details.  The threat intel causing the alert is indicated by the threatintels.hbaseThreatIntel.ip_dst_addr.malicious_ip field.
+
+<img src="images/malicious_ip_alert_detail.png" width="50%" height="50%" title="Malicious ip alert detail">
+
 
