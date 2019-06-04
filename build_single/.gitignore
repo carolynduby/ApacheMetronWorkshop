@@ -1,1 +1,3 @@
 genconfig.*/
+*mpack*.tar.gz
+*.out
