@@ -1,19 +1,19 @@
-gen_dir=`mktemp -p . -d genconfig.XXXXXXXXXX`
-varfile=single-node-es-blueprint-19-variables.txt
-hostmap=single-node-hostmapping.json
-blueprint=single-node-es-blueprint-19.json
+gendir=$1
+varfile=$2
+hostmap=$3
+blueprint=$4
 
-cp $hostmap $gen_dir
-cp $blueprint $gen_dir
+cp $hostmap $gendir
+cp $blueprint $gendir
  
 ## replace the host name with the vm host name
 host_replace="s/{{{my_hostname}}}/$HOSTNAME/g"
-sed -i $host_replace $gen_dir/$hostmap 
+sed -i $host_replace $gendir/$hostmap 
 
 while IFS="=" read -r key value; do 
    case "$key" in 
        '#'*) ;;
        *)
-          sed -i "s/{{{$key}}}/$value/g" $gen_dir/$blueprint
+          sed -i "s/{{{$key}}}/$value/g" $gendir/$blueprint
    esac
 done < "$varfile"
