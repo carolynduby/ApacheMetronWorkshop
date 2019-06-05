@@ -484,6 +484,9 @@
         },
         {
           "name": "KIBANA_MASTER"
+        },
+        {
+          "name": "MYSQL_SERVER"
         }
       ],
       "configurations": [
