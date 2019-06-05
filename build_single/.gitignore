@@ -1,3 +1,4 @@
 genconfig.*/
 *mpack*.tar.gz
 *.out
+*.rpm
