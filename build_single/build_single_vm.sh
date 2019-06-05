@@ -7,7 +7,14 @@ sudo yum install net-tools -y
 
 #install nodejs
 curl --silent --location https://rpm.nodesource.com/setup_8.x | sudo bash -
-yum install -y nodejs
+sudo yum install -y nodejs
+
+#install mysql
+wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
+sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm
+sudo yum -y install mysql-community-server
+sudo yum -y install mysql-connector-java
+sudo service mysqld start
 
 # correct the python-requests version so metron service status displays correct results
 sudo yum -y install python-pip
@@ -34,6 +41,7 @@ wget -nv http://public-repo-1.hortonworks.com/HDF/centos7/3.x/updates/3.1.2.0/ta
 sudo ambari-server install-mpack --mpack=hcp-ambari-mpack-1.9.1.0-6.tar.gz --verbose
 sudo ambari-server install-mpack --mpack=elasticsearch_mpack-1.9.1.0-6.tar.gz --verbose
 sudo ambari-server install-mpack --mpack=hdf-ambari-mpack-3.1.2.0-7.tar.gz --verbose
+sudo ambari-server setup --jdbc-db=mysql --jdbc-driver=/usr/share/java/mysql-connector-java.jar
 
 sudo ambari-server restart
 
