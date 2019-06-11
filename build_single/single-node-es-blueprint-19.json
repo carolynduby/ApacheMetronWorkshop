@@ -540,6 +540,7 @@
   ],
   "Blueprints": {
     "blueprint_name": "single-node-hcp-cluster",
+    "config_recommendation_strategy" : "ALWAYS_APPLY_DONT_OVERRIDE_CUSTOM_VALUES",
     "stack_name": "HDP",
     "stack_version": "2.6"
   }
