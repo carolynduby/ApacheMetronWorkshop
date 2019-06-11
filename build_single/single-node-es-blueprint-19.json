@@ -32,6 +32,9 @@
       "metron-env": {
         "properties": {
           "es_hosts": "localhost"
+          "storm_rest_addr" : "http://localhost:8744",
+          "zeppelin_server_url" : "localhost:9995",
+          "metron_home" : "/usr/hcp/1.9.1.0-6/metron"
         }
       }
     },
@@ -540,7 +543,6 @@
   ],
   "Blueprints": {
     "blueprint_name": "single-node-hcp-cluster",
-    "config_recommendation_strategy" : "ALWAYS_APPLY_DONT_OVERRIDE_CUSTOM_VALUES",
     "stack_name": "HDP",
     "stack_version": "2.6"
   }
