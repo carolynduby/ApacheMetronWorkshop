@@ -31,7 +31,7 @@
     {
       "metron-env": {
         "properties": {
-          "es_hosts": "localhost"
+          "es_hosts": "localhost",
           "storm_rest_addr" : "http://localhost:8744",
           "zeppelin_server_url" : "localhost:9995",
           "metron_home" : "/usr/hcp/1.9.1.0-6/metron"
@@ -451,15 +451,6 @@
         },
         {
           "name": "HCAT"
-        },
-        {
-          "name": "RANGER_TAGSYNC"
-        },
-        {
-          "name": "RANGER_USERSYNC"
-        },
-        {
-          "name": "RANGER_ADMIN"
         },
         {
           "name": "TEZ_CLIENT"
