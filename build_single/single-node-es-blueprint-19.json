@@ -31,8 +31,20 @@
     {
       "metron-env": {
         "properties": {
-          "es_hosts": "localhost",
+          "metron_log_dir" : "/var/log/metron",
+          "es_cluster_name" : "metron",
+          "metron_apps_hdfs_dir" : "/apps/metron",
+          "metron_user" : "metron",
+          "es_date_format" : "yyyy.MM.dd.HH",
+          "es_http_port" : "9200",
+          "metron_service_keytab" : "",
+          "metron_topic_retention" : "10",
+          "solr_zookeeper_url" : "localhost:2181/solr",
+          "metron_pid_dir" : "/var/run/metron",
+          "metron_zookeeper_config_dir" : "config/zookeeper",
           "storm_rest_addr" : "http://localhost:8744",
+          "es_hosts" : "localhost",
+          "metron_group" : "metron",
           "zeppelin_server_url" : "localhost:9995",
           "metron_home" : "/usr/hcp/1.9.1.0-6/metron"
         }
