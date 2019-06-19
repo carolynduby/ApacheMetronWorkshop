@@ -1,0 +1,165 @@
+{
+    "template": "mysquid_index*",
+    "settings": {},
+    "mappings": {
+      "mysquid_doc": {
+        "dynamic_templates": [
+          {
+            "geo_location_point": {
+              "match": "enrichments:geo:*:location_point",
+              "match_mapping_type": "*",
+              "mapping": {
+                "type": "geo_point"
+              }
+            }
+          },
+          {
+            "geo_country": {
+              "match": "enrichments:geo:*:country",
+              "match_mapping_type": "*",
+              "mapping": {
+                "type": "keyword"
+              }
+            }
+          },
+          {
+            "geo_city": {
+              "match": "enrichments:geo:*:city",
+              "match_mapping_type": "*",
+              "mapping": {
+                "type": "keyword"
+              }
+            }
+          },
+          {
+            "geo_location_id": {
+              "match": "enrichments:geo:*:locID",
+              "match_mapping_type": "*",
+              "mapping": {
+                "type": "keyword"
+              }
+            }
+          },
+          {
+            "geo_dma_code": {
+              "match": "enrichments:geo:*:dmaCode",
+              "match_mapping_type": "*",
+              "mapping": {
+                "type": "keyword"
+              }
+            }
+          },
+          {
+            "geo_postal_code": {
+              "match": "enrichments:geo:*:postalCode",
+              "match_mapping_type": "*",
+              "mapping": {
+                "type": "keyword"
+              }
+            }
+          },
+          {
+            "geo_latitude": {
+              "match": "enrichments:geo:*:latitude",
+              "match_mapping_type": "*",
+              "mapping": {
+                "type": "float"
+              }
+            }
+          },
+          {
+            "geo_longitude": {
+              "match": "enrichments:geo:*:longitude",
+              "match_mapping_type": "*",
+              "mapping": {
+                "type": "float"
+              }
+            }
+          },
+          {
+            "timestamps": {
+              "match": "*:ts",
+              "match_mapping_type": "*",
+              "mapping": {
+                "type": "date",
+                "format": "epoch_millis"
+              }
+            }
+          },
+          {
+            "threat_triage_score": {
+              "mapping": {
+                "type": "float"
+              },
+              "match": "threat:triage:*score",
+              "match_mapping_type": "*"
+            }
+          },
+          {
+            "threat_triage_reason": {
+              "mapping": {
+                "type": "text",
+                "fielddata": "true"
+              },
+              "match": "threat:triage:rules:*:reason",
+              "match_mapping_type": "*"
+            }
+          }
+        ],
+        "properties": {
+          "action": {
+            "type": "keyword"
+          },
+          "bytes": {
+            "type": "long"
+          },
+          "code": {
+            "type": "long"
+          },
+          "domain_without_subdomains": {
+            "type": "keyword"
+          },
+          "elapsed": {
+            "type": "long"
+          },
+          "full_hostname": {
+            "type": "keyword"
+          },
+          "guid": {
+            "type": "keyword"
+          },
+          "ip_dst_addr": {
+            "type": "ip"
+          },
+          "ip_src_addr": {
+            "type": "ip"
+          },
+          "is_alert": {
+            "type": "keyword"
+          },
+          "is_potential_typosquat": {
+            "type": "boolean"
+          },
+          "method": {
+            "type": "keyword"
+          },
+          "original_text": {
+            "type": "text"
+          },
+          "source:type": {
+            "type": "keyword"
+          },
+          "timestamp": {
+            "type": "date",
+            "format": "epoch_millis"
+          },
+          "url": {
+            "type": "keyword"
+          },
+          "alert": {
+            "type": "nested"
+          }
+        }
+      }
+    }
+}
