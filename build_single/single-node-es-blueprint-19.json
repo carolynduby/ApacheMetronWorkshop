@@ -493,6 +493,12 @@
         },
         {
           "name": "MYSQL_SERVER"
+        },
+        {
+          "name" : "SQOOP"
+        },
+        {
+          "name" : "SLIDER"
         }
       ],
       "configurations": [
