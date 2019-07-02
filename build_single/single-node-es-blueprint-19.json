@@ -185,7 +185,17 @@
           "xasecure.audit.destination.solr": "true",
           "ranger_admin_password": "{{{default_password}}}",
           "rangerusersync_user_password": "{{{default_password}}}",
-          "create_db_dbuser": "false"
+          "create_db_dbuser": "true"
+        }
+      }
+    },
+    {
+      "admin-properties" : {
+        "properties_attributes" : { },
+        "properties" : {
+          "db_root_user" : "root",
+          "db_root_password" : "root",
+          "db_host" : "localhost"
         }
       }
     },
@@ -463,6 +473,15 @@
         },
         {
           "name": "HCAT"
+        },
+        {
+          "name": "RANGER_TAGSYNC"
+        },
+        {
+          "name": "RANGER_USERSYNC"
+        },
+        {
+          "name": "RANGER_ADMIN"
         },
         {
           "name": "TEZ_CLIENT"
