@@ -177,6 +177,7 @@
           "ranger-hive-plugin-enabled": "No",
           "xasecure.audit.destination.hdfs": "true",
           "ranger-hdfs-plugin-enabled": "No",
+          "ranger-hive-plugin-enabled": "Yes",
           "rangertagsync_user_password": "{{{default_password}}}",
           "ranger-atlas-plugin-enabled": "No",
           "admin_password": "{{{default_password}}}",
