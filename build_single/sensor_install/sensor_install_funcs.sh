@@ -1,3 +1,5 @@
+#!/bin/bash
+
 pushd () {
     command pushd "$@" > /dev/null
 }
@@ -7,7 +9,7 @@ popd () {
 }
 
 read_config_vars() {
-    config_file = $1
+    local config_file="$1"
     if [ -f "$config_file" ]; then
         while IFS="=" read -r key value; do
             case "$key" in
