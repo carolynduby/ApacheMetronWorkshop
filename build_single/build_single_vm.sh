@@ -15,6 +15,9 @@ sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm
 sudo yum -y install mysql-community-server
 sudo yum -y install mysql-connector-java
 sudo service mysqld start
+
+mysql -u root < mysql_init_users.sql 
+
 #change the root pw
 sudo mysqladmin -u root password root
 
