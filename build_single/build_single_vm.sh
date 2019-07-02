@@ -17,6 +17,7 @@ sudo yum -y install mysql-connector-java
 sudo service mysqld start
 
 mysql -u root < mysql_init_users.sql 
+echo "grant all privileges on *.* to 'hive'@'"`hostname`"' identified by 'admin';" | mysql -u root
 
 #change the root pw
 sudo mysqladmin -u root password root
