@@ -15,6 +15,8 @@ sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm
 sudo yum -y install mysql-community-server
 sudo yum -y install mysql-connector-java
 sudo service mysqld start
+#change the root pw
+sudo mysqladmin -u root password root
 
 # correct the python-requests version so metron service status displays correct results
 sudo yum -y install python-pip
