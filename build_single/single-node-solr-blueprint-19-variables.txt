@@ -1,0 +1,10 @@
+default_password=Hadoop123!
+hdf.nodeEntities=Hadoop123!
+hdf.registryNodeEntities=Hadoop123!
+metron.ldap.bind.password=admin-password
+nifi.registry.security.encrypt.configuration.password=Thisisareallylongpassword123!
+nifi.registry.sensitive.props.key=Thisisareallylongpassword123!
+nifi.security.encrypt.configuration.password=Thisisareallylongpassword123!
+nifi.sensitive.props.key=Thisisareallylongpassword123!
+nifi.toolkit.tls.token=Thisisareallylongpassword123!
+ranger.kms.password=RangerKMSPassword123!

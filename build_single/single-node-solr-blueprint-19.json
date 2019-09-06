@@ -1,0 +1,547 @@
+{
+  "configurations": [
+    {
+      "storm-site": {
+        "properties_attributes": {},
+        "properties": {
+          "topology.classpath": "/etc/hbase/conf:/etc/hadoop/conf",
+          "supervisor.slots.ports": "[6700,6701,6702,6703,6704,6705,6706,6707]",
+          "storm.local.dir": "/hadoopfs/fs1/storm"
+        }
+      }
+    },
+    {
+      "kafka-broker": {
+        "properties": {
+          "super.users": "User:kafka;User:metron",
+          "offsets.topic.replication.factor": "1",
+          "default.replication.factor": "1"
+        }
+      }
+    },
+    {
+      "metron-security-env": {
+        "properties_attributes": {},
+        "properties": {
+          "metron.ldap.enabled": "true",
+          "metron.ldap.bind.password": "{{{metron.ldap.bind.password}}}"
+        }
+      }
+    },
+    {
+      "metron-env": {
+        "properties": {
+          "metron_log_dir" : "/var/log/metron",
+          "es_cluster_name" : "metron",
+          "metron_apps_hdfs_dir" : "/apps/metron",
+          "metron_user" : "metron",
+          "es_date_format" : "yyyy.MM.dd.HH",
+          "es_http_port" : "9200",
+          "metron_service_keytab" : "",
+          "metron_topic_retention" : "10",
+          "solr_zookeeper_url" : "localhost:2181/solr",
+          "metron_pid_dir" : "/var/run/metron",
+          "metron_zookeeper_config_dir" : "config/zookeeper",
+          "storm_rest_addr" : "http://localhost:8744",
+          "es_hosts" : "localhost",
+          "metron_group" : "metron",
+          "zeppelin_server_url" : "localhost:9995",
+          "metron_home" : "/usr/hcp/1.9.1.0-6/metron"
+        }
+      }
+    },
+    {
+      "metron-indexing-env": {
+        "properties_attributes": {},
+        "properties": {
+          "ra_indexing_writer": "Solr"
+        }
+      }
+    },
+    {
+      "metron-enrichment-env": {
+        "properties_attributes": {},
+        "properties": {
+          "enrichment_topology": "Unified"
+        }
+      }
+    },
+    {
+      "nifi-ambari-config": {
+        "properties": {
+          "nifi.security.encrypt.configuration.password": "{{{nifi.security.encrypt.configuration.password}}}",
+          "nifi.max_mem": "1g"
+        }
+      }
+    },
+    {
+      "nifi-properties": {
+        "properties": {
+          "nifi.sensitive.props.key": "{{{nifi.sensitive.props.key}}}",
+          "nifi.security.user.login.identity.provider": ""
+        }
+      }
+    },
+    {
+      "nifi-ambari-ssl-config": {
+        "properties": {
+          "nifi.toolkit.tls.token": "{{{nifi.toolkit.tls.token}}}",
+          "nifi.toolkit.dn.prefix": "CN=",
+          "nifi.toolkit.dn.suffix": ", OU=NIFI",
+          "nifi.initial.admin.identity": "admin",
+          "content": "{{{hdf.nodeEntities}}}"
+        }
+      }
+    },
+    {
+      "nifi-registry-ambari-config": {
+        "properties": {
+          "nifi.registry.security.encrypt.configuration.password": "{{{nifi.registry.security.encrypt.configuration.password}}}"
+        }
+      }
+    },
+    {
+      "nifi-registry-properties": {
+        "properties": {
+          "nifi.registry.sensitive.props.key": "{{{nifi.registry.sensitive.props.key}}}",
+          "nifi.registry.security.user.login.identity.provider": "kerberos-provider"
+        }
+      }
+    },
+    {
+      "nifi-registry-ambari-ssl-config": {
+        "properties": {
+          "nifi.registry.ssl.isenabled": "false",
+          "nifi.registry.toolkit.dn.prefix": "CN=",
+          "nifi.registry.toolkit.dn.suffix": ", OU=NIFI",
+          "nifi.registry.initial.admin.identity": "admin",
+          "content": "{{{hdf.registryNodeEntities}}}"
+        }
+      }
+    },
+    {
+      "kms-properties": {
+        "properties": {
+          "KMS_MASTER_KEY_PASSWD": "{{{ranger.kms.password}}}"
+        }
+      }
+    },
+    {
+      "hive-interactive-site": {
+        "properties": {
+          "hive.execution.engine": "tez"
+        }
+      }
+    },
+    {
+      "hive-site": {
+        "properties": {
+          "hive.execution.engine": "tez",
+          "hive.server2.transport.mode": "http",
+          "hive.exec.compress.output": "true",
+          "hive.merge.mapfiles": "true",
+          "hive.server2.tez.initialize.default.sessions": "true",
+          "hive.metastore.transactional.event.listeners": "org.apache.hive.hcatalog.listener.DbNotificationListener"
+        }
+      }
+    },
+    {
+      "ranger-env": {
+        "properties": {
+          "is_solrCloud_enabled": "true",
+          "ranger-hive-plugin-enabled": "No",
+          "xasecure.audit.destination.hdfs": "true",
+          "ranger-hdfs-plugin-enabled": "No",
+          "ranger-hive-plugin-enabled": "Yes",
+          "rangertagsync_user_password": "{{{default_password}}}",
+          "ranger-atlas-plugin-enabled": "No",
+          "admin_password": "{{{default_password}}}",
+          "ranger-yarn-plugin-enabled": "No",
+          "keyadmin_user_password": "{{{default_password}}}",
+          "xasecure.audit.destination.solr": "true",
+          "ranger_admin_password": "{{{default_password}}}",
+          "rangerusersync_user_password": "{{{default_password}}}",
+          "create_db_dbuser": "true"
+        }
+      }
+    },
+    {
+      "admin-properties" : {
+        "properties_attributes" : { },
+        "properties" : {
+          "db_root_user" : "root",
+          "db_root_password" : "root",
+          "db_host" : "localhost"
+        }
+      }
+    },
+    {
+      "zeppelin-shiro-ini": {
+        "properties": {
+          "shiro_ini_content": "[users]\n# List of users with their password allowed to access Zeppelin.\n# To use a different strategy (LDAP / Database / ...) check the shiro doc at http://shiro.apache.org/configuration.html#Configuration-INISections\n\nadmin = {{{default_password}}}\n\n# Sample LDAP configuration, for user Authentication, currently tested for single Realm\n[main]\n\nsessionManager = org.apache.shiro.web.session.mgt.DefaultWebSessionManager\nsecurityManager.sessionManager = $sessionManager\n# 86,400,000 milliseconds = 24 hour\nsecurityManager.sessionManager.globalSessionTimeout = 86400000\nshiro.loginUrl = /api/login\n\n[urls]\n# anon means the access is anonymous.\n# authcBasic means Basic Auth Security\n# To enfore security, comment the line below and uncomment the next one\n/api/version = anon\n#/** = anon\n/** = authc"
+        }
+      }
+    },
+    {
+      "ranger-hive-plugin-properties": {
+        "properties": {
+          "ranger.service.config.param.enable.hive.metastore.lookup": "true",
+          "external_ranger_admin_password": "{{{default_password}}}",
+          "external_ranger_admin_username": "admin",
+          "external_admin_username": "admin",
+          "ranger.service.config.param.hive.site.file.path": "/etc/hive/conf/hive-site.xml",
+          "external_admin_password": "{{{default_password}}}"
+        }
+      }
+    },
+    {
+      "hive-env": {
+        "properties": {
+          "hive_security_authorization": "Ranger"
+        }
+      }
+    },
+    {
+      "ams-grafana-env": {
+        "properties": {
+          "metrics_grafana_password": "{{{default_password}}}",
+          "metrics_grafana_username": "admin"
+        }
+      }
+    },
+    {
+      "hbase-site": {
+        "properties": {
+          "zookeeper.recovery.retry": "10",
+          "hbase.tmp.dir": "/hadoopfs/fs1/hbase"
+        }
+      }
+    },
+    {
+      "webhcat-site": {
+        "properties": {
+          "webhcat.proxyuser.root.groups": "*",
+          "webhcat.proxyuser.root.hosts": "*"
+        }
+      }
+    },
+    {
+      "cluster-env": {
+        "properties": {
+          "recovery_enabled": "true",
+          "commands_to_retry": "START",
+          "recovery_type": "AUTO_START"
+        }
+      }
+    },
+    {
+      "core-site": {
+        "properties": {
+          "proxyuser_group": "hadoop",
+          "hadoop.proxyuser.falcon.groups": "*",
+          "hadoop.proxyuser.root.groups": "*",
+          "hadoop.proxyuser.livy.hosts": "*",
+          "hadoop.proxyuser.falcon.hosts": "*",
+          "hadoop.proxyuser.oozie.hosts": "*",
+          "hadoop.proxyuser.hcat.hosts": "*",
+          "hadoop.proxyuser.oozie.groups": "*",
+          "hadoop.proxyuser.hive.groups": "*",
+          "hadoop.proxyuser.hcat.groups": "*",
+          "hadoop.proxyuser.livy.groups": "*",
+          "hadoop.proxyuser.hbase.groups": "*",
+          "hadoop.proxyuser.hbase.hosts": "*",
+          "hadoop.proxyuser.root.hosts": "*",
+          "hadoop.proxyuser.hive.hosts": "*"
+        }
+      }
+    },
+    {
+      "hdfs-site": {
+        "properties": {
+          "dfs.namenode.name.dir": "/hadoopfs/fs1/hdfs/namenode",
+          "dfs.journalnode.edits.dir": "/hadoopfs/fs1/hdfs/journalnode",
+          "dfs.namenode.checkpoint.dir": "/hadoopfs/fs1/hdfs/namesecondary"
+        }
+      }
+    },
+    {
+      "zoo.cfg": {
+        "properties": {
+          "dataDir": "/hadoopfs/fs1/zookeeper"
+        }
+      }
+    },
+    {
+      "ams-hbase-site": {
+        "properties": {
+          "hbase.wal.dir": "file:///hadoopfs/fs1/metrics/hbase/wal",
+          "hbase.tmp.dir": "/hadoopfs/fs1/metrics/hbase-tmp"
+        }
+      }
+    },
+    {
+      "yarn-site": {
+        "properties": {
+          "yarn.timeline-service.leveldb-timeline-store.path": "/hadoopfs/fs1/yarn/timeline"
+        }
+      }
+    },
+    {
+      "ams-site": {
+        "properties": {
+          "timeline.metrics.aggregator.checkpoint.dir": "/hadoopfs/fs1/metrics/checkpoint"
+        }
+      }
+    },
+    {
+      "infra-solr-env": {
+        "properties": {
+          "infra_solr_datadir": "/hadoopfs/fs1/infra/solr"
+        }
+      }
+    }
+  ],
+  "host_groups": [
+    {
+      "name": "metron",
+      "cardinality": "1",
+      "components": [
+        {
+          "name": "METRON_REST"
+        },
+        {
+          "name": "METRON_ALERTS_UI"
+        },
+        {
+          "name": "METRON_MANAGEMENT_UI"
+        },
+        {
+          "name": "METRON_PARSERS"
+        },
+        {
+          "name": "METRON_ENRICHMENT_MASTER"
+        },
+        {
+          "name": "METRON_PROFILER"
+        },
+        {
+          "name": "METRON_INDEXING"
+        },
+        {
+          "name": "METRON_PCAP"
+        },
+        {
+          "name": "METRICS_MONITOR"
+        },
+        {
+          "name": "HST_AGENT"
+        },
+        {
+          "name": "METRON_CLIENT"
+        },
+        {
+          "name": "SPARK2_CLIENT"
+        },
+        {
+          "name": "SPARK_CLIENT"
+        },
+        {
+          "name": "YARN_CLIENT"
+        },
+        {
+          "name": "HDFS_CLIENT"
+        },
+        {
+          "name": "HBASE_CLIENT"
+        },
+        {
+          "name": "HIVE_CLIENT"
+        },
+        {
+          "name": "ZOOKEEPER_CLIENT"
+        },
+        {
+          "name": "MAPREDUCE2_CLIENT"
+        },
+        {
+          "name": "KAFKA_BROKER"
+        },
+        {
+          "name": "SUPERVISOR"
+        },
+        {
+          "name": "KNOX_GATEWAY"
+        },
+        {
+          "name": "AMBARI_SERVER"
+        },
+        {
+          "name": "INFRA_SOLR"
+        },
+        {
+          "name": "INFRA_SOLR_CLIENT"
+        },
+        {
+          "name": "METRICS_COLLECTOR"
+        },
+        {
+          "name": "METRICS_GRAFANA"
+        },
+        {
+          "name": "ACTIVITY_ANALYZER"
+        },
+        {
+          "name": "HST_SERVER"
+        },
+        {
+          "name": "ZEPPELIN_MASTER"
+        },
+        {
+          "name": "NIFI_CA"
+        },
+        {
+          "name": "NIFI_REGISTRY_MASTER"
+        },
+        {
+          "name": "NAMENODE"
+        },
+        {
+          "name": "JOURNALNODE"
+        },
+        {
+          "name": "SECONDARY_NAMENODE"
+        },
+        {
+          "name": "APP_TIMELINE_SERVER"
+        },
+        {
+          "name": "SPARK_JOBHISTORYSERVER"
+        },
+        {
+          "name": "SPARK2_JOBHISTORYSERVER"
+        },
+        {
+          "name": "HISTORYSERVER"
+        },
+        {
+          "name": "RESOURCEMANAGER"
+        },
+        {
+          "name": "STORM_UI_SERVER"
+        },
+        {
+          "name": "NIMBUS"
+        },
+        {
+          "name": "DRPC_SERVER"
+        },
+        {
+          "name": "HBASE_MASTER"
+        },
+        {
+          "name": "HIVE_SERVER"
+        },
+        {
+          "name": "WEBHCAT_SERVER"
+        },
+        {
+          "name": "HIVE_METASTORE"
+        },
+        {
+          "name": "HCAT"
+        },
+        {
+          "name": "RANGER_TAGSYNC"
+        },
+        {
+          "name": "RANGER_USERSYNC"
+        },
+        {
+          "name": "RANGER_ADMIN"
+        },
+        {
+          "name": "TEZ_CLIENT"
+        },
+        {
+          "name": "ZOOKEEPER_SERVER"
+        },
+        {
+          "name": "HBASE_REGIONSERVER"
+        },
+        {
+          "name": "DATANODE"
+        },
+        {
+          "name": "NODEMANAGER"
+        },
+        {
+          "name": "NIFI_MASTER"
+        },
+        {
+          "name": "MYSQL_SERVER"
+        },
+        {
+          "name" : "SQOOP"
+        },
+        {
+          "name" : "SLIDER"
+        },
+        {
+          "name": "SOLR_SERVER"
+        }
+      ],
+      "configurations": [
+        {
+          "hdfs-site": {
+            "dfs.datanode.data.dir": "/hadoopfs/fs1/hdfs/datanode"
+          }
+        },
+        {
+          "yarn-site": {
+            "yarn.nodemanager.local-dirs": "/hadoopfs/fs1/yarn/nodemanager",
+            "yarn.nodemanager.log-dirs": "/hadoopfs/fs1/yarn/nodemanager/log"
+          }
+        },
+        {
+          "core-site": {
+            "fs.s3a.buffer.dir": "/hadoopfs/fs1/s3-${user.name}"
+          }
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "recovery_settings": [
+        {
+          "recovery_enabled": "true"
+        }
+      ]
+    },
+    {
+      "service_settings": [
+        {
+          "name": "HIVE",
+          "credential_store_enabled": "true"
+        },
+        {
+          "recovery_enabled": "true",
+          "name": "AMBARI_METRICS"
+        }
+      ]
+    },
+    {
+      "component_settings": [
+        {
+          "recovery_enabled": "true",
+          "name": "METRICS_COLLECTOR"
+        }
+      ]
+    }
+  ],
+  "Blueprints": {
+    "blueprint_name": "single-node-hcp-cluster",
+    "stack_name": "HDP",
+    "stack_version": "2.6"
+  }
+}

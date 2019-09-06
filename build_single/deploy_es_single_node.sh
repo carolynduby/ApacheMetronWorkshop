@@ -1,7 +1,8 @@
+index_type=$1
 gendir=`mktemp -p . -d genconfig.XXXXXXXXXX`
-varfile=single-node-es-blueprint-19-variables.txt
+varfile=single-node-${index_type}-blueprint-19-variables.txt
 hostmap=single-node-hostmapping.json
-blueprint=single-node-es-blueprint-19.json
+blueprint=single-node-${index_type}-blueprint-19.json
 
 ## replace the passwords in the blueprint with the variables
 ./prepare_ambari_config.sh $gendir $varfile $hostmap $blueprint
