@@ -1,5 +1,6 @@
 {
   "config" : {
+    "zk_quorum" : "ZK_QUORUM",
     "columns" : {
        "rank" : 0,
        "domain" : 1
@@ -8,11 +9,11 @@
        "domain" : "DOMAIN_REMOVE_TLD(domain)"
     },
     "value_filter" : "LENGTH(domain) > 0",
-    "state_init" : "BLOOM_INIT(3496552, 0.001)",
+    "state_init" : "0L",
     "state_update" : {
-       "state" : "REDUCE( DOMAIN_TYPOSQUAT( domain ), (s, x) -> BLOOM_ADD(s, x), state)"
+       "state" : "state + LENGTH( DOMAIN_TYPOSQUAT( domain ))"
                      },
-    "state_merge" : "BLOOM_MERGE(states)",
+    "state_merge" : "REDUCE(states, (s, x) -> s + x, 0)",
     "separator" : ","
   },
   "extractor" : "CSV"
