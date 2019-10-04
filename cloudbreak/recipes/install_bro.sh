@@ -18,11 +18,12 @@ mkdir librdkafka
 pushd librdkafka/
 wget https://github.com/edenhill/librdkafka/archive/v0.11.5.tar.gz
 gunzip v0.11.5.tar.gz
-tar xvf wget v0.11.5.tar
-cd librdkafka-0.11.5/
+tar xvf v0.11.5.tar
+pushd librdkafka-0.11.5/
 ./configure --enable-sasl
 make
 make install
+popd
 popd
 
 # install bro-pkg
@@ -35,23 +36,25 @@ bro-pkg autoconfig
 
 ## load packages at the end of /opt/bro/share/bro/site/local.bro
 echo "@load packages" >> /opt/bro/share/bro/site/local.bro
-echo "redef Kafka::logs_to_send = set(HTTP::LOG, DNS::LOG);" >> /opt/bro/share/bro/site/local.bro
+echo "redef Kafka::logs_to_send = set(DNS::LOG);" >> /opt/bro/share/bro/site/local.bro
+echo "redef Kafka::tag_json = T;" >> /opt/bro/share/bro/site/local.bro
 echo "redef Kafka::kafka_conf = table(" >> /opt/bro/share/bro/site/local.bro
 echo "    [\"metadata.broker.list\"] = \"${BROKERLIST}\"" >> /opt/bro/share/bro/site/local.bro
 echo ");" >> /opt/bro/share/bro/site/local.bro
 
 # install bro from source
-wget https://www.zeek.org/downloads/bro-2.6.1.tar.gz
-gunzip bro-2.6.1.tar.gz
-tar xvf bro-2.6.1.tar
-pushd bro-2.6.1
+bro_binary_version=`rpm -qa | grep bro- | grep -v core | cut -d"-" -f2`
+wget https://www.zeek.org/downloads/bro-${bro_binary_version}.tar.gz
+gunzip bro-${bro_binary_version}.tar.gz
+tar xvf bro-${bro_binary_version}.tar
+pushd bro-${bro_binary_version}
 ./configure
 make
 make install
 popd
 
 ## add source code to zeek config 
-sed -i 's/zeek_dist =/zeek_dist = \/root\/bro-2.6.1/' /root/.zkg/config
+sed -i "s/zeek_dist =/zeek_dist = \/root\/bro-${bro_binary_version}/" /root/.zkg/config
 
 bro-pkg install apache/metron-bro-plugin-kafka --version master --force
 

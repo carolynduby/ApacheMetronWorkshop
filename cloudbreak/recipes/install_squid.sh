@@ -1,4 +1,4 @@
-i# install squid proxy and set it to run on reboot
+# install squid proxy and set it to run on reboot
 yum -y install squid
 
 # modify the config to allow outside requests
