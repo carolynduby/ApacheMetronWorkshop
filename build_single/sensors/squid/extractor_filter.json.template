@@ -3,7 +3,7 @@
     "zk_quorum" : "ZK_QUORUM",
     "columns" : {
        "rank" : 0,
-       "domain" : 1
+       "domain" : 2 
     },
     "value_transform" : {
        "domain" : "DOMAIN_REMOVE_TLD(domain)"
