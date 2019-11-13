@@ -4,8 +4,8 @@ if [ $# -ne 1 ]; then
 fi
 
 #index type must be es or solr
-if [ "$index_type" -ne "es" -a "$index_type" -ne "solr" ]; then
-     echo "ERROR: index type argument must be es or solr. 
+if [ "$index_type" != "es" -a "$index_type" != "solr" ]; then
+     echo "ERROR: index type argument must be es or solr." 
      exit 1
 fi 
 
