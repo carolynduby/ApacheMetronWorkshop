@@ -2,3 +2,4 @@ genconfig.*/
 *mpack*.tar.gz
 *.out
 *.rpm
+build_single.log
