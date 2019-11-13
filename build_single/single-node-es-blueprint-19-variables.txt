@@ -1,8 +1,8 @@
 default_password=CHANGEME
 hdf.nodeEntities=CHANGEME
 hdf.registryNodeEntities=CHANGEME
-metron.ldap.bind.password=CHANGEME
-nifi.registry.security.encrypt.configuration.password=CHANGEME
+metron.ldap.bind.password=admin-password
+nifi.registry.security.encrypt.configuration.password=CHANGEMEMUSTBE12CHARS
 nifi.registry.sensitive.props.key=CHANGEME
 nifi.security.encrypt.configuration.password=CHANGEME
 nifi.sensitive.props.key=CHANGEME

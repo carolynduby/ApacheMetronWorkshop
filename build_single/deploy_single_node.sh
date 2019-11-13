@@ -1,3 +1,14 @@
+if [ $# -ne 1 ]; then 
+    echo "Usage: " $0 " index_type(es|solr)"
+    exit 1
+fi
+
+#index type must be es or solr
+if [ "$index_type" -ne "es" -a "$index_type" -ne "solr" ]; then
+     echo "ERROR: index type argument must be es or solr. 
+     exit 1
+fi 
+
 index_type=$1
 gendir=`mktemp -p . -d genconfig.XXXXXXXXXX`
 varfile=single-node-${index_type}-blueprint-19-variables.txt
