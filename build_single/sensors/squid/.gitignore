@@ -1,4 +1,5 @@
 top*.csv
+maj*.csv
 *.zip
 *.zip.*
 extractor*.json
