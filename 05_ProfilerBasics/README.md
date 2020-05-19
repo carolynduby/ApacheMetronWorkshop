@@ -121,9 +121,16 @@ PROFILE_GET( "locations_by_user", "user1", PROFILE_FIXED(120, "DAYS"))
 
 Load the Metron environment variables: `source /etc/default/metron`
 
-Edit `/usr/hcp/current/metron/config/zookeeper/profiler.json` using your favorite editor (e.g. vi or emacs)
+Now download the Metron configs from the zookeeper store to a local directory:
 
-Add the `hello-world` profile and save the file
+```
+$ cd $METRON_HOME
+$ bin/zk_load_configs.sh -m PULL -f -o config/zookeeper/ -z localhost:2181
+```
+
+Now you have a copy of the metron config locally, edit `/usr/hcp/current/metron/config/zookeeper/profiler.json` using your favorite editor (e.g. vi or emacs)
+
+Add the `hello-world` profile to the profiles array in the json and save the file
 
 ```
 {
